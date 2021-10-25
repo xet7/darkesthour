@@ -8,6 +8,14 @@ Game made by GeekOnSkates: http://www.geekonskates.com/games/
 
 Blogpost with screenshots: https://lunduke.substack.com/p/new-spooky-multi-retro-platform-text
 
+## Story
+
+Halloween is almost here, but something is happening that's much scarier than the annual haunted house at the fire hall.  There are rumors of a vampire - a real one - attacking people at night.  Of course most people think it's just silly; who wouldn't?  But people are going missing, and others swear they've seen it.  It's up to you to track down this vampire, stop it if possible.  The question is, will you even survive the night?
+
+## Downloads
+
+[Downloads](https://github.com/xet7/darkesthour/tree/main/Original)
+
 Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 
 - Apple II
@@ -28,14 +36,6 @@ Game binaries by [@xet7](https://github.com/xet7):
   - Linux arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
   - Linux s390x, for IBM Z-Series mainframes
   - Linux ppc64el
-
-## Story
-
-Halloween is almost here, but something is happening that's much scarier than the annual haunted house at the fire hall.  There are rumors of a vampire - a real one - attacking people at night.  Of course most people think it's just silly; who wouldn't?  But people are going missing, and others swear they've seen it.  It's up to you to track down this vampire, stop it if possible.  The question is, will you even survive the night?
-
-## Downloads
-
-[At this repo directory: Original](https://github.com/xet7/darkesthour/tree/main/Original)
 
 ## How to play
 
