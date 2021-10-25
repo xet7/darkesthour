@@ -4,6 +4,10 @@
 
 This is an old-fashioned text adventure game, hopefully the first of many.
 
+Game made by GeekOnSkates: http://www.geekonskates.com/games/
+
+Blogpost about this game: https://lunduke.substack.com/p/new-spooky-multi-retro-platform-text
+
 ## Story
 
 Halloween is almost here, but something is happening that's much scarier than the annual haunted house at the fire hall.  There are rumors of a vampire - a real one - attacking people at night.  Of course most people think it's just silly; who wouldn't?  But people are going missing, and others swear they've seen it.  It's up to you to track down this vampire, stop it if possible.  The question is, will you even survive the night?
