@@ -8,7 +8,7 @@ Game made by GeekOnSkates: http://www.geekonskates.com/games/
 
 Blogpost with screenshots: https://lunduke.substack.com/p/new-spooky-multi-retro-platform-text
 
-1) Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
+Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 
 - Apple II
 - C64
@@ -21,7 +21,7 @@ Blogpost with screenshots: https://lunduke.substack.com/p/new-spooky-multi-retro
 - Windows 64bit
 - Linux x64
 
-2) Game binaries by [@xet7](https://github.com/xet7):
+Game binaries by [@xet7](https://github.com/xet7):
 
 - AmigaOS3
 - Linux. These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc:
