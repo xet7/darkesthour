@@ -3,6 +3,8 @@
 
 This release adds the following fixes:
 
+- [Added Linux ppc64el binary](https://github.com/xet7/darkesthour/commit/e2c1227530df20f12ce6a4d40abbf02ffb353e6e).
+  Thanks to xet7.
 - [Added Linux s390x binary](https://github.com/xet7/darkesthour/commit/c273dbe22adca6a581623f73469540f1c7e63fa0).
   Thanks to xet7.
 - [Added Linux arm64 binary](https://github.com/xet7/darkesthour/commit/d8946c23bd89cfb346db08723bfdfd53956d21e3).
