@@ -3,6 +3,8 @@
 
 This release adds the following features and fixes:
 
+- [Added macOS Big Sur x64 binary](https://github.com/xet7/darkesthour/commit/3f2568b9053287f20288f55fb564ce0e1295de07).
+  Thanks to xet7.
 - [Added macOS arm64 binary](https://github.com/xet7/darkesthour/commit/4f88d36af1ace4a581431e276cb4d0b0e84b8af0).
   Thanks to xet7.
 - [Added Linux ppc64el binary](https://github.com/xet7/darkesthour/commit/e2c1227530df20f12ce6a4d40abbf02ffb353e6e).

@@ -33,11 +33,12 @@ Game binaries by [@xet7](https://github.com/xet7):
 
 - AmigaOS3
 - Linux. These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc:
-  - Linux arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
-  - Linux s390x, for IBM Z-Series mainframes
-  - Linux ppc64el
+  - arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
+  - s390x, for IBM Z-Series mainframes
+  - ppc64el, for OpenPower
 - macOS Big Sur:
   - arm64
+  - x64
 
 ## How to play
 
