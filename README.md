@@ -36,6 +36,8 @@ Game binaries by [@xet7](https://github.com/xet7):
   - Linux arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
   - Linux s390x, for IBM Z-Series mainframes
   - Linux ppc64el
+- macOS Big Sur:
+  - arm64
 
 ## How to play
 
@@ -59,8 +61,8 @@ Building only Linux: `make linux`
 Building all: `make all`
 
 Binaries built mostly on Linux Mint x64, using compilers and crosscompilers. Linux binaries for arm64/s390x/ppc64el were built on Linux servers
-donated to [Wekan Open Source kanban](https://wekan.github.io) project by CNCF/Linux Foundation, IBM LinuxOne Community Cloud
-and OpenPower MiniCloud.
+donated to [Wekan Open Source kanban](https://wekan.github.io) project by CNCF/Linux Foundation, IBM LinuxOne Community Cloud,
+OpenPower MiniCloud and MacStadium.
 
 # License
 
