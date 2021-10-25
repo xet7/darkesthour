@@ -8,6 +8,23 @@ Game made by GeekOnSkates: http://www.geekonskates.com/games/
 
 Blogpost about this game: https://lunduke.substack.com/p/new-spooky-multi-retro-platform-text
 
+Game built for:
+
+- AmigaOS3
+- Apple II
+- C64
+- CBM-II
+- Commodore PET, with 40 columns of text
+- Commodore PET, with 80 columns of text
+- DOS
+- Plus4
+- Win32
+- Win64
+- Linux-x64
+- Linux-arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
+- Linux-s390x for IBM Z-Series mainframes, using RedHat or Ubuntu
+- Linux-ppc64el, using Ubuntu
+
 ## Story
 
 Halloween is almost here, but something is happening that's much scarier than the annual haunted house at the fire hall.  There are rumors of a vampire - a real one - attacking people at night.  Of course most people think it's just silly; who wouldn't?  But people are going missing, and others swear they've seen it.  It's up to you to track down this vampire, stop it if possible.  The question is, will you even survive the night?
@@ -31,9 +48,13 @@ On the Apple 2, instead of pressing Return, you may have to press Space a bunch 
 [At this repo directory: Source](https://github.com/xet7/darkesthour/tree/main/Source). There is darkest-hour.c that works on all platforms.
 
 Some compilers at directory [Source/Archive](https://github.com/xet7/darkesthour/tree/main/Source/archive), some can be installed with
-`cd Source && make deps`.
+`make deps`. See Makefile.
 
-Binaries built mostly on Linux Mint x64, using crosscompilers. Linux binaries for arm64/s390x/ppc64el build on Linux servers
+Building only Linux: `make linux`
+
+Building all: `make all`
+
+Binaries built mostly on Linux Mint x64, using compilers and crosscompilers. Linux binaries for arm64/s390x/ppc64el were built on Linux servers
 donated to [Wekan Open Source kanban](https://wekan.github.io) project by CNCF/Linux Foundation, IBM LinuxOne Community Cloud
 and OpenPower MiniCloud.
 
