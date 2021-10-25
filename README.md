@@ -18,12 +18,12 @@ Game built for:
 - Commodore PET, with 80 columns of text
 - DOS
 - Plus4
-- Win32
-- Win64
-- Linux-x64
-- Linux-arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
-- Linux-s390x for IBM Z-Series mainframes, using RedHat or Ubuntu
-- Linux-ppc64el, using Ubuntu
+- Windows 32bit
+- Windows 64bit
+- Linux x64
+- Linux arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
+- Linux s390x, for IBM Z-Series mainframes, using RedHat or Ubuntu
+- Linux ppc64el, using Ubuntu
 
 ## Story
 
