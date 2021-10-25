@@ -28,8 +28,7 @@ On the Apple 2, instead of pressing Return, you may have to press Space a bunch 
 
 ## Source
 
-[At this repo directory: Source](https://github.com/xet7/darkesthour/tree/main/Source). There is darkest-hour.c     
-that works on all platforms.
+[At this repo directory: Source](https://github.com/xet7/darkesthour/tree/main/Source). There is darkest-hour.c that works on all platforms.
 
 Some compilers at directory [Source/Archive](https://github.com/xet7/darkesthour/tree/main/Source/archive), some can be installed with
 `cd Source && make deps`.
