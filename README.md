@@ -8,9 +8,8 @@ Game made by GeekOnSkates: http://www.geekonskates.com/games/
 
 Blogpost about this game: https://lunduke.substack.com/p/new-spooky-multi-retro-platform-text
 
-Game built for:
+Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 
-- AmigaOS3
 - Apple II
 - C64
 - CBM-II
@@ -20,8 +19,12 @@ Game built for:
 - Plus4
 - Windows 32bit
 - Windows 64bit
+- Linux x64
+
+Game binaries by [@xet7](https://github.com/xet7):
+
+- AmigaOS3
 - Linux. These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc:
-  - Linux x64
   - Linux arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
   - Linux s390x, for IBM Z-Series mainframes
   - Linux ppc64el
