@@ -14,7 +14,7 @@ Halloween is almost here, but something is happening that's much scarier than th
 
 ## Downloads
 
-[Downloads](https://github.com/xet7/darkesthour/tree/main/Original)
+[**Downloads**](https://github.com/xet7/darkesthour/tree/main/Original)   <==== HERE
 
 Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 
