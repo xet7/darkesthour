@@ -39,11 +39,25 @@ For more information, please refer to <http://unlicense.org/>
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
 
+/************************************************************************
+ FIXES FOR AmigaOS3 using C89:
+ 1. Do not use "#include <stdint.h>", instead use these these typedefs:
+    https://stackoverflow.com/questions/62937049/stdint-h-in-ansi-c-c89
+ 2. Also uint8_t as unsigned char:
+    https://stackoverflow.com/questions/1725855/uint8-t-vs-unsigned-char
+************************************************************************/
+
+typedef unsigned char  uint8_t;
+typedef unsigned char  uint8;
+typedef signed char    int8;
+typedef unsigned short uint16;
+typedef signed short   int16;
+typedef unsigned long  uint32;
+typedef signed long    int32;
 
 /************************************************************************
  COMPILER SETTINGS

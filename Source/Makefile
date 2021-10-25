@@ -50,4 +50,4 @@ win64:
 
 amigaos3:
 	@mkdir -p build/AmigaOS3
-	m68k-amigaos-gcc darkest-hour.c -noixemul -o ./build/AmigaOS3/DarkestHour
+	m68k-amigaos-gcc darkest-hour.c -noixemul -o ./build/AmigaOS3/darkest-hour
