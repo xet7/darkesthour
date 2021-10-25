@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Build Environment for M68k Amiga (m68k-amigaos-toolchain)</title>
+<link rel="stylesheet" type="text/css" href="Build%20Environment%20for%20M68k%20Amiga%20(m68k-amigaos-toolchain)_tiedostot/fengestad.css">
+</head>
+<body class="with-sidebar">
+<div id="fs-body">
+<section id="fs-header">
+<header id="fs-site-header">
+<p>Navigation:</p>
+<nav>
+<ul>
+<li><a href="http://fengestad.no/">Fengestad</a></li>
+<!--<li><a href="/open-source">Open Source Projects</a></li>-->
+</ul>
+</nav>
+</header><!-- #site-header -->
+
+<header id="fs-page-header">
+<h1>Build Environment for M68k Amiga <span class="subtitle">m68k-amigaos-toolchain</span></h1>
+</header><!-- #page-header -->
+</section><!-- #header -->
+
+<div id="sidebar"><h3>Open Source Projects</h3>
+<ul>
+<li><a href="http://fengestad.no/fs-mednafen">fs-mednafen</a></li>
+<li><a href="http://fengestad.no/fs-uae">fs-uae</a></li>
+<li><a href="http://fengestad.no/fs-uae-arcade">fs-uae-arcade</a></li>
+<li><a href="http://fengestad.no/fs-uae-launcher">fs-uae-launcher</a></li>
+<li><a href="http://fengestad.no/fs-uae-plugin-qemu-uae">fs-uae-plugin-qemu-uae</a></li>
+<li><a href="http://fengestad.no/libfs-capsimage">libfs-capsimage</a></li>
+<li><a href="http://fengestad.no/python-lhafile">python-lhafile</a></li>
+</ul>
+<h3>Amiga Stuff</h3>
+<ul>
+<li><a href="http://fengestad.no/m68k-amigaos-toolchain">m68k-amigaos-toolchain</a></li>
+</ul>
+</div><!-- #fs-sidebar -->
+<script type="text/javascript" src="Build%20Environment%20for%20M68k%20Amiga%20(m68k-amigaos-toolchain)_tiedostot/sidebar.js"></script>
+
+<section id="fs-content">
+
+<p>This page contains precompiled cross-compilers and tools for building
+AmigaOS software. The tools are built with the help of the excellent
+build script and patch set found on
+<a href="https://github.com/cahirwpz/m68k-amigaos-toolchain">https://github.com/cahirwpz/m68k-amigaos-toolchain</a>
+by courtesy of <a href="https://github.com/cahirwpz">Krystian Bacławski</a>.
+By installing the toolchain you get the following:</p>
+
+<ul>
+<li>GNU gcc 2.95.3, g++ 2.95.3, libstdc++ 2.10, binutils 2.9.1</li>
+<li>libnix 2.1, libm 5.4, ixemul.library 48.2</li>
+<li>vbcc 0.9b + vclib, vasm 1.5c, vlink 0.14a</li>
+<li>AmigaOS headers &amp; libraries (for AmigaOS 3.9)</li>
+</ul>
+
+<p>Recent versions of GNU tools do not support the AmigaOS/M68k target at
+all, which is why old versions of GNU tools are used. Also,
+<a href="http://eab.abime.net/showpost.php?p=694623&amp;postcount=2">it is claimed</a>
+that GCC 2.95 generates better M68k code than GCC 3.x.</p>
+
+<h2>Example Usage</h2>
+
+<p>The point of these tools is to be able to build software for the
+Amiga, but with compilers and tools running natively on your computer.
+As an example, a classic hello world program might be
+compiled like this:</p>
+<pre>gcc helloworld.c -o helloworld<code></code></pre>
+
+<p>To compile it for AmigaOS instead of your native host architecture:</p>
+<pre>m68k-amigaos-gcc helloworld.c -noixemul -o helloworld<code></code></pre>
+
+<h2>Installation</h2>
+
+<p>To install on a Linux system, you can run the following commands (yes,
+it must be installed in /opt):
+</p><pre><code>cd /tmp &amp;&amp; wget http://fengestad.no/m68k-amigaos-toolchain/m68k-amigaos_linux_i386.tar.gz
+cd /opt &amp;&amp; sudo tar zxf /tmp/m68k-amigaos_linux_i386.tar.gz</code></pre>
+
+Remember to install the 32-bit glibc package on x86-64 systems.
+To make the tools easily available, you can add them to the PATH
+(better append to the path as you don't want cpp to shadow the system cpp),
+or you can simply symlink the tools your want to /usr/local/bin:
+<pre><code>cd /usr/local/bin &amp;&amp; sudo ln -s /opt/m68k-amigaos/bin/*m68k* .
+cd /usr/local/bin &amp;&amp; sudo ln -s /opt/m68k-amigaos/bin/v* .</code></pre>
+
+<h2>Downloads</h2>
+
+<p>Linux: <a href="http://fengestad.no/m68k-amigaos-toolchain/m68k-amigaos_linux_i386.tar.gz">m68k-amigaos_linux_i386.tar.gz</a>
+- Built on Debian 7.0 i386, should work on most recent Linux distrutions (32-bit glibc must be
+installed on x86-64 systems).</p><p>
+
+</p><p>Source code: See
+<a href="https://github.com/cahirwpz/m68k-amigaos-toolchain">https://github.com/cahirwpz/m68k-amigaos-toolchain</a>
+</p>
+
+</section><!-- #fs-content -->
+</div><!-- #fs-body -->
+<footer id="fs-footer">
+Copyright (c) 2013 Frode Solheim. You can
+<a href="mailto:frode-code@fengestad.no">contact me</a> if you
+have questions or comments. Please also report if you spot any errors in
+this page.
+</footer>
+<!--<script type="text/javascript" src="../open-source/footer.js"></script>-->
+
+
+</body></html>

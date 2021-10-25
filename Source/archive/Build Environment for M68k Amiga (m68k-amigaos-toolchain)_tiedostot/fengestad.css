@@ -1,0 +1,538 @@
+html {
+    position: relative;
+    height: 100%;
+    margin: 0px;
+}
+body {
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-bottom: 0px;
+
+    font-family: "Trebuchet MS", Arial, Sans-Serif;
+    font-size: 14px;
+/*
+    position: relative;
+    width: 100&;
+
+*/
+    height: 100%;
+/*
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+*/
+}
+
+body.with-sidebar {
+    /* 32 + 32 + 320 + 32 */
+/*    margin-right: 416px;*/
+    background-image: url(sidebar-background.png);
+    background-position: right top;
+    background-repeat: repeat-y;
+}
+
+#header,
+#fs-header {
+    margin-left: -32px;
+    margin-top: -32px;
+    margin-right: -32px;
+/*    margin-bottom: 32px;*/
+}
+
+body.with-sidebar #header,
+body.with-sidebar #fs-header {
+/*    margin-right: -416px;*/
+}
+
+#site-header,
+#fs-site-header {
+/*    padding-top: 12px; */
+    margin-bottom: -12px;
+    background-color: #444444;
+    color: white;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#site-header a,
+#fs-site-header a {
+    color: #c0c0c0;
+    text-decoration: none;
+    font-size: 12px;
+    background-color: transparent !important;
+}
+
+#site-header a:hover,
+#fs-site-header a:hover {
+    color: #ffffff;
+}
+
+#site-header p,
+#fs-site-header p {
+    display: none;
+}
+
+#site-header ul,
+#fs-site-header ul {
+    display:inline;
+    padding-left: 0px;
+    margin: 0px;
+/*
+    padding-top: 8px;
+    padding-bottom: 8px;
+*/
+}
+
+#site-header li,
+#fs-site-header li {
+/*    padding-top: 16px;*/
+    display:inline;
+/*    line-height: 1.0;*/
+    line-height: 44px;
+    padding-left: 32px;
+}
+
+#page-header,
+#fs-page-header {
+/*    background-color: #e8e8e8;*/
+    background-color: #444444;
+    padding: 16px;
+    padding-left: 32px;
+    padding-bottom: 24px;
+/*    border-bottom: 1px solid #d0d0d0;*/
+    position: relative;
+}
+
+#page-header img,
+#fs-page-header img {
+    float: left;
+    margin-top: -4px;
+    margin-right: 16px;
+}
+
+#page-header h1,
+#fs-page-header h1 {
+    margin: 0px;
+    font-size: 20px;
+    color: #f0f0f0;
+}
+
+#page-header h1 span.subtitle,
+#fs-page-header h1 span.subtitle {
+    color: #a0a0a0;
+    padding-left: 4px;
+}
+
+#page-header a,
+#fs-page-header a {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #f0f0f0;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: transparent !important;
+}
+
+#page-header a:hover,
+#fs-page-header a:hover {
+    color: #ffffff;
+    background-color: #606060 !important;
+}
+
+
+#page-header ul,
+#fs-page-header ul {
+/* float: right;*/
+
+    position: absolute;
+    top: 0px;
+    right: 32px;
+
+    display:inline;
+    padding-left: 0px;
+    line-height: 60px;
+    margin: 0px;
+}
+
+#page-header li,
+#fs-page-header li {
+    display:inline;
+    line-height: 1.0;
+    padding-left: 16px;
+}
+
+#fs-below-header {
+    display: none;
+/*
+    position: absolute;
+    width: 100%;
+    height: 16px;
+    background-image: url(/i/below-header.png);
+    z-index: 1;
+*/
+}
+
+#sidebar,
+#fs-sidebar {
+/*
+    position: absolute;
+*/
+/*
+    top: 123px;
+*/
+/*
+    right: 0px;
+*/
+    float: right;
+    width: 320px;
+    margin-right: -32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+/*
+#fs-sidebar h3:first-child, #sidebar h3:first-child {
+    margin-top: 32px;
+}
+*/
+
+#fs-content > :first-child {
+    margin-top: 0px;
+}
+
+/* for wordpress */
+.entry-content > :first-child {
+    margin-top: 0px;
+}
+
+#fs-sidebar :first-child,
+#sidebar :first-child {
+    margin-top: 0px;
+}
+
+ul.fs-sidebar-menu {
+    margin-left: 0px;
+    list-style-type: none;
+}
+
+ul.fs-sidebar-menu li {
+/*
+    padding-top: 4px;
+    padding-bottom: 4px;
+*/
+}
+
+ul.fs-sidebar-menu li.selected {
+/*
+    margin-left: -32px;
+    padding-left: 32px;
+*/
+}
+
+ul.fs-sidebar-menu li a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+    margin-left: -32px;
+    padding-left: 64px;
+    margin-right: -32px;
+    padding-right: 32px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    background-repeat: no-repeat;
+    background-position: 32px 50%;
+}
+
+ul.fs-sidebar-menu li.selected a {
+    background-color: white;
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    color: black;
+    text-decoration: none !important;
+}
+
+#fs-sidebar textarea {
+    background-color: white;
+}
+
+/*
+ul.fs-sidebar-menu li.selected a,
+ul.fs-sidebar-menu li.selected a:hover,
+ul.fs-sidebar-menu li.selected a:focus {
+}
+*/
+#fs-content {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+#fs-content-end {
+    clear: both;
+}
+
+body.with-sidebar #fs-content {
+/*    margin-right: 416px;*/
+    margin-right: 384px;
+}
+
+.fs-page-width {
+    margin-left: -32px;
+    margin-right: -32px;
+}
+
+body.with-sidebar .fs-page-width {
+/*    margin-right: -416px;*/
+}
+
+
+#header-and-content,
+#fs-body {
+    min-height: 100%;
+/*
+    padding-bottom: 32px;
+*/
+/*
+    margin-bottom: 32px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+*/
+}
+
+#footer,
+#fs-footer {
+    border-top: 6px solid #666666;
+    background-color: #333333;
+    margin-left: -32px;
+    margin-right: -32px;
+    padding: 32px;
+    color: #999999;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+#footer a,
+#fs-footer a {
+    color: #c0c0c0;
+    text-decoration: underline;
+}
+
+body.with-sidebar #footer,
+body.with-sidebar #fs-footer {
+/*    margin-right: -416px;*/
+}
+
+h2 {
+    /* using a bit less than 32 since the normal capital letter have some 
+       space at the top */
+    /*margin-top: 27px;*/
+    font-size: 20px;
+}
+
+p, li {
+    line-height: 1.5;
+}
+
+pre {
+/*
+    background-color: #f4f4f4;
+    border: 1px solid #e8e8e8;
+    padding: 6px;
+*/
+/*
+    background-color: #fbfbfb;
+    background-image: url("http://fengestad.no/i/pre-check.png");
+
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+*/
+/*
+    border-top: 2px solid #a4d1f4;
+    border-bottom: 2px solid #a4d1f4;
+*/
+/*
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e8e8e8;
+*/
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+/*
+    margin-left: -32px;
+    padding-left: 32px;
+*/
+/*
+    margin-right: -32px;
+*/
+/*
+    padding-right: 32px;
+*/
+}
+
+code {
+    font-family: Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace;
+    font-size: 14px;
+}
+
+kbd, code {
+    background: #eaeaea;
+    background: rgba(0, 0, 0, 0.07);
+}
+
+pre code {
+    background: none;
+}
+
+a {
+    color: rgb(25, 130, 209);
+    text-decoration: none;
+}
+
+a:focus, a:active, a:hover {
+/*
+    text-decoration: underline;
+*/
+    background-color: #e6f4ff;
+}
+
+p {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+/*
+:focus {
+    outline: 0px none;
+}
+*/
+
+.fs-dialog {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.75);
+/*    background-color: rgba(128, 128, 128, 0.5);*/
+/*    background-color: rgba(255, 255, 255, 0.67);*/
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.fs-dialog-close {
+    display: block;
+    width: 32px;
+    height: 32px;
+    float: right;
+    background-color: #909090;
+    color: white;
+    line-height: 32px;
+    text-align: center;
+    margin-top: -32px;
+    margin-right: -32px;
+}
+
+.fs-dialog-button-area {
+    background-color: #c0c0c0;
+    margin-top: 32px;
+    margin-left: -32px;
+    margin-right: -32px;
+    margin-bottom: -32px;
+    padding: 16px 32px;
+    text-align: right;
+}
+
+/* a note / paragraph in smaller text then normal */
+.fs-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #808080;
+}
+
+.windows-22 {
+    background-image: url(http://fengestad.no/i/22/windows.png);
+}
+
+.macosx-22 {
+    background-image: url(http://fengestad.no/i/22/macosx.png);
+}
+
+.ubuntu-22 {
+    background-image: url(http://fengestad.no/i/22/ubuntu.png);
+}
+
+.debian-22 {
+    background-image: url(http://fengestad.no/i/22/debian.png);
+}
+
+.fedora-22 {
+    background-image: url(http://fengestad.no/i/22/fedora.png);
+}
+
+.opensuse-22 {
+    background-image: url(http://fengestad.no/i/22/opensuse.png);
+}
+
+.freebsd-22 {
+    background-image: url(http://fengestad.no/i/22/freebsd.png);
+}
+
+.openbsd-22 {
+    background-image: url(http://fengestad.no/i/22/openbsd.png);
+}
+
+.linux-22 {
+    background-image: url(http://fengestad.no/i/22/linux.png);
+}
+
+.steamos-22 {
+    background-image: url(http://fengestad.no/i/22/steamos.png);
+}
+
+.zip-22 {
+    background-image: url(http://fengestad.no/i/22/zip.png);
+}
+
+.fs-uae-22 {
+    background-image: url(http://fengestad.no/i/22/fs-uae.png);
+}
+
+#test-site-warning {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    padding: 4px 6px 4px 6px;
+    background-color: #660000;
+/*
+    border-top: 1px solid #330000;
+    border-right: 1px solid #330000;
+*/
+    color: #ccaaaa;
+    font-size: 13px;
+}
+
+#test-site-warning a {
+    color: white;
+    text-decoration: underline;
+    background-color: inherit !important;
+}
+
+/* Special support for OAGD.net logged-in-frame (iframe) */
+
+.logged-in-frame {
+    border-width: 0px;
+    width: 200px;
+    height: 30px;
+    overflow: hidden;
+    float: right;
+    margin-right: 16px;
+}
+
