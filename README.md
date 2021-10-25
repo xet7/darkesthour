@@ -20,11 +20,11 @@ Game built for:
 - Plus4
 - Windows 32bit
 - Windows 64bit
-- Linux. These usually work for any Linux distro for that CPU:
+- Linux. These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc:
   - Linux x64
   - Linux arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
-  - Linux s390x, for IBM Z-Series mainframes, using RedHat or Ubuntu
-  - Linux ppc64el, using Ubuntu
+  - Linux s390x, for IBM Z-Series mainframes
+  - Linux ppc64el
 
 ## Story
 
