@@ -6,9 +6,9 @@ This is an old-fashioned text adventure game, hopefully the first of many.
 
 Game made by GeekOnSkates: http://www.geekonskates.com/games/
 
-Blogpost about this game: https://lunduke.substack.com/p/new-spooky-multi-retro-platform-text
+Blogpost with screenshots: https://lunduke.substack.com/p/new-spooky-multi-retro-platform-text
 
-Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
+1) Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 
 - Apple II
 - C64
@@ -21,7 +21,7 @@ Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 - Windows 64bit
 - Linux x64
 
-Game binaries by [@xet7](https://github.com/xet7):
+2) Game binaries by [@xet7](https://github.com/xet7):
 
 - AmigaOS3
 - Linux. These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc:
