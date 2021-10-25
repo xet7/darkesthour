@@ -3,6 +3,8 @@
 
 This release adds the following fixes:
 
+- [Added Linux s390x binary](https://github.com/xet7/darkesthour/commit/c273dbe22adca6a581623f73469540f1c7e63fa0).
+  Thanks to xet7.
 - [Added Linux arm64 binary](https://github.com/xet7/darkesthour/commit/d8946c23bd89cfb346db08723bfdfd53956d21e3).
   Thanks to xet7.
 - [Added AmigaOS3 fixes and executeable binary to Original/AmigaOS3 directory](https://github.com/xet7/darkesthour/commit/91a28c9d798a78b8a4f977d3e1724d581b621520).
