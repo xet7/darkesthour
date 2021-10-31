@@ -40,6 +40,11 @@ Game binaries by [@xet7](https://github.com/xet7):
   - arm64
   - x64
 
+Game binaries by [@aGGre55or](https://github.com/aGGre55or):
+
+- AmigaOS4
+- AROS ABIv0 i386
+
 ## How to play
 
 1. Download the version that matches the type of computer you're using.  The different versions can be found in the "bin" folder.
