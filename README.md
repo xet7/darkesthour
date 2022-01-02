@@ -42,7 +42,7 @@ Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 
 ### Other Amiga compilers, not used here
   - [Docker AmigaOS Cross Toolchain](https://github.com/sebastianbergmann/docker-amigaos-cross-toolchain)
-  - [More Amiga compilers at Aminet](http://aminet.net/tree?path=dev)
+  - [Amiga compilers at Aminet](http://aminet.net/tree?path=dev)
   - [Haujobb Amiga Framework for Windows](https://github.com/leifo/haujobb-amiga)
   - From [ALBs Blog](https://blog.alb42.de), [Amiga Lazarus Wiki](http://fpcamigawiki.alb42.de/index.php?title=Main_Page) and online FreePascal compilers for [AmigaOS 1.x](http://home.alb42.de/fpamiga13) and [AmigaOS 3.x/4.x, AROS, MorphOS](http://home.alb42.de/fpamiga/)
 
