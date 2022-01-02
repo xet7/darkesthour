@@ -39,6 +39,7 @@ Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
   - It is compiled at Linux [here at Makefile](https://github.com/xet7/darkesthour/blob/main/Source/Makefile#L53)
   - After compiling, xet7 tested binary on AmigaOS 3.x at WinUAE at AmigaForever at PlayOnLinux on Linux Mint. Later when PlayOnLinux did not work, xet7 used CrossOver Linux.
   - Because running binary on AmigaOS did give errors, [xet7 made some changes to code](https://github.com/xet7/darkesthour/commit/91a28c9d798a78b8a4f977d3e1724d581b621520) to make it working.
+  - [More Amiga compilers at Aminet](http://aminet.net/tree?path=dev)
 
 ### Linux
   - These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc. These have been compiled by using ssh to connect those donated build servers.
