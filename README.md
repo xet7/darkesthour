@@ -10,7 +10,10 @@ Blogpost with screenshots: https://lunduke.substack.com/p/new-spooky-multi-retro
 
 ## Story
 
-Halloween is almost here, but something is happening that's much scarier than the annual haunted house at the fire hall.  There are rumors of a vampire - a real one - attacking people at night.  Of course most people think it's just silly; who wouldn't?  But people are going missing, and others swear they've seen it.  It's up to you to track down this vampire, stop it if possible.  The question is, will you even survive the night?
+Halloween is almost here, but something is happening that's much scarier than the annual haunted house at the fire hall.
+ There are rumors of a vampire - a real one - attacking people at night. 
+Of course most people think it's just silly; who wouldn't?  But people are going missing, and others swear they've seen it. 
+It's up to you to track down this vampire, stop it if possible.  The question is, will you even survive the night?
 
 ## Downloads
 
@@ -29,18 +32,26 @@ Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 - Windows 64bit
 - Linux x64
 
-Game binaries by [@xet7](https://github.com/xet7):
+## Game binaries by [@xet7](https://github.com/xet7):
 
-- AmigaOS3
-- Linux. These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc:
-  - arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu
-  - s390x, for IBM Z-Series mainframes
-  - ppc64el, for OpenPower
-- macOS Big Sur:
+### AmigaOS3
+  - xet7 used [crosscompiler on Linux](http://fengestad.no/m68k-amigaos-toolchain/) , there is [copy of those files also at repo](https://github.com/xet7/darkesthour/tree/main/Source/archive)
+  - It is compiled at Linux [here at Makefile](https://github.com/xet7/darkesthour/blob/main/Source/Makefile#L53)
+  - After compiling, xet7 tested binary on AmigaOS 3.x at WinUAE at AmigaForever at PlayOnLinux on Linux Mint. Later when PlayOnLinux did not work, xet7 used CrossOver Linux.
+  - Because running binary on AmigaOS did give errors, [xet7 made some changes to code](https://github.com/xet7/darkesthour/commit/91a28c9d798a78b8a4f977d3e1724d581b621520) to make it working.
+
+### Linux
+  - These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc. These have been compiled by using ssh to connect those donated build servers.
+  - arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu. Compiled at [server donated to WeKan development by CNCF that is part of Linux Foundation](https://blog.wekan.team/2019/06/wekan-on-raspi3-and-arm64-server-now-works-and-whats-next-with-cncf/)
+  - s390x, for IBM Z-Series mainframes.  Compiled at [server donated to WeKan development by IBM LinuxOne Community Cloud](https://www.openmainframeproject.org/blog/2020/11/20/wekan-open-source-kanban-on-s390x)
+  - ppc64el, for OpenPower. Compiled at [server donated to WeKan development by OpenPower MiniCloud](https://openpower.ic.unicamp.br/minicloud/)
+
+### macOS Big Sur
+  - Compiled at [server donated to WeKan development by MacStadium](https://github.com/wekan/wekan/wiki/Mac)
   - arm64
   - x64
 
-Game binaries by [@aGGre55or](https://github.com/aGGre55or):
+## Game binaries by [@aGGre55or](https://github.com/aGGre55or)
 
 - AmigaOS4
 - AROS ABIv0 i386
