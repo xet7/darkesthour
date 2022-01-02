@@ -39,8 +39,12 @@ Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
   - It is compiled at Linux [here at Makefile](https://github.com/xet7/darkesthour/blob/main/Source/Makefile#L53)
   - After compiling, xet7 tested binary on AmigaOS 3.x at WinUAE at AmigaForever at PlayOnLinux on Linux Mint. Later when PlayOnLinux did not work, xet7 used CrossOver Linux.
   - Because running binary on AmigaOS did give errors, [xet7 made some changes to code](https://github.com/xet7/darkesthour/commit/91a28c9d798a78b8a4f977d3e1724d581b621520) to make it working.
+
+### Other Amiga compilers, not used here
+  - [Docker AmigaOS Cross Toolchain](https://github.com/sebastianbergmann/docker-amigaos-cross-toolchain)
   - [More Amiga compilers at Aminet](http://aminet.net/tree?path=dev)
   - [Haujobb Amiga Framework for Windows](https://github.com/leifo/haujobb-amiga)
+  - From [ALBs Blog](https://blog.alb42.de), [Amiga Lazarus Wiki](http://fpcamigawiki.alb42.de/index.php?title=Main_Page) and online FreePascal compilers for [AmigaOS 1.x](http://home.alb42.de/fpamiga13) and [AmigaOS 3.x/4.x, AROS, MorphOS](http://home.alb42.de/fpamiga/)
 
 ### Linux
   - These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc. These have been compiled by using ssh to connect those donated build servers.
