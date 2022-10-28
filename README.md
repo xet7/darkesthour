@@ -34,6 +34,9 @@ Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 
 ## Game binaries by [@xet7](https://github.com/xet7):
 
+### Android
+  - xet7 used F-Droid to install Termux, and compiled with `gcc -o darkest-hour darkest-hour.c`
+
 ### AmigaOS3
   - xet7 used [crosscompiler at Linux](http://fengestad.no/m68k-amigaos-toolchain/) , there is [copy of those files also at this repo](https://github.com/xet7/darkesthour/tree/main/Source/archive)
   - It is compiled at Linux [here at Makefile](https://github.com/xet7/darkesthour/blob/main/Source/Makefile#L53)
@@ -48,9 +51,12 @@ Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 
 ### Linux
   - These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc. These have been compiled by using ssh to connect those donated build servers.
-  - arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit and Ubuntu. Compiled at [server donated to WeKan development by CNCF that is part of Linux Foundation](https://blog.wekan.team/2019/06/wekan-on-raspi3-and-arm64-server-now-works-and-whats-next-with-cncf/)
+  - arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit, Ubuntu and Ubuntu Touch. Compiled at [server donated to WeKan development by CNCF that is part of Linux Foundation](https://blog.wekan.team/2019/06/wekan-on-raspi3-and-arm64-server-now-works-and-whats-next-with-cncf/)
   - s390x, for IBM Z-Series mainframes.  Compiled at [server donated to WeKan development by IBM LinuxOne Community Cloud](https://www.openmainframeproject.org/blog/2020/11/20/wekan-open-source-kanban-on-s390x)
   - ppc64el, for OpenPower. Compiled at [server donated to WeKan development by OpenPower MiniCloud](https://openpower.ic.unicamp.br/minicloud/)
+
+### iOS
+  - No binaries, but you can use `Mobile C` Android app [git clone example](https://github.com/dztall/ccr_resources/blob/master/Examples/fetch_mobilec_examples.c) to download this git repo, and at [darkest-hour.c](https://raw.githubusercontent.com/xet7/darkesthour/main/Source/darkest-hour.c) click `Run` button at `Mobile C` app to run game.
 
 ### macOS Big Sur
   - Compiled at [server donated to WeKan development by MacStadium](https://github.com/wekan/wekan/wiki/Mac)
