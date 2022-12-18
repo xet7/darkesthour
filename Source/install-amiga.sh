@@ -6,4 +6,5 @@ if [ -L /usr/local/bin/68k-amigaos-gcc ] ; then
 	(cd /opt && sudo tar zxf /tmp/m68k-amigaos_linux_i386.tar.gz)
 	(cd /usr/local/bin && sudo ln -s /opt/m68k-amigaos/bin/*m68k* . && sudo ln -s /opt/m68k-amigaos/bin/v* .)
 	(cd /usr/local/bin && sudo ln -s /opt/m68k-amigaos/bin/v* .)
+	(sudo rm /tmp/m68k-amigaos_linux_i386.tar.gz)
 fi
