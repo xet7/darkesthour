@@ -82,12 +82,17 @@ On the Apple 2, instead of pressing Return, you may have to press Space a bunch 
 
 [At this repo directory: Source](https://github.com/xet7/darkesthour/tree/main/Source). There is darkest-hour.c that works on all platforms.
 
-Some compilers at directory [Source/Archive](https://github.com/xet7/darkesthour/tree/main/Source/archive), some can be installed with
-`make deps`. See [Makefile](https://github.com/xet7/darkesthour/blob/main/Source/Makefile).
+Installing all dependencies and building all at newest Ubuntu amd64:
+
+```
+git clone https://github.com/xet7/darkesthour
+
+cd darkesthour/Source
+
+make
+```
 
 Building only Linux: `make linux`
-
-Building all: `make all`
 
 Binaries built mostly on Linux Mint x64, using compilers and crosscompilers. Linux binaries for arm64/s390x/ppc64el were built on Linux servers
 donated to [Wekan Open Source kanban](https://wekan.github.io) project by CNCF/Linux Foundation, IBM LinuxOne Community Cloud,
