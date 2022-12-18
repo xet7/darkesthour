@@ -6,9 +6,15 @@ if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 	sudo apt-get -y install gcc-ia16-elf build-essential mingw-w64 p7zip-full
 fi
 
+#### Build newest cc65 from source
 if [ ! -d archive/cc65 ] ; then
-	(cd archive && 7z x cc65.7z)
+	(cd archive && git clone https://github.com/cc65/cc65 && cd cc65 && make)
 fi
+
+#### If using old cc65 version:
+#if [ ! -d archive/cc65 ] ; then
+#	(cd archive && 7z x cc65.7z)
+#fi
 
 if [ -L /usr/local/bin/68k-amigaos-gcc ] ; then
 	(sudo apt-get -y install gcc-multilib)
