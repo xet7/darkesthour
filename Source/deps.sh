@@ -3,7 +3,9 @@
 if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 	sudo add-apt-repository -y ppa:tkchia/build-ia16
 	sudo apt-get update
-	sudo apt-get -y install gcc-ia16-elf build-essential mingw-w64 p7zip-full
+	sudo apt-get -y install gcc-ia16-elf build-essential mingw-w64 p7zip-full \
+		gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi \
+		gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
 fi
 
 #### Build newest cc65 from source

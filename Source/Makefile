@@ -1,13 +1,21 @@
 .PHONY: all
 
-all: deps linux dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
+all: deps linux-x64 linux-arm32 linux-arm64 dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
 
 deps:
 	@./deps.sh
 
-linux:
+linux-x64:
 	@mkdir -p build/Linux-x64
 	gcc darkest-hour.c -o build/Linux-x64/darkest-hour -Wall
+
+linux-arm32:
+	@mkdir -p build/Linux-arm32
+	arm-linux-gnueabi-gcc darkest-hour.c -o build/Linux-arm32/darkest-hour -static
+
+linux-arm64:
+	@mkdir -p build/Linux-arm64
+	aarch64-linux-gnu-gcc darkest-hour.c -o build/Linux-arm64/darkest-hour -static
 
 dos:
 	@mkdir -p build/DOS
