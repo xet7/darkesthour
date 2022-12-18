@@ -1,11 +1,9 @@
 .PHONY: all
 
-all: linux dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
+all: deps linux dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
 
 deps:
-	sudo add-apt-repository -y ppa:tkchia/build-ia16
-	sudo apt-get update
-	sudo apt-get -y install gcc-ia16-elf build-essential mingw-w64
+	@./deps.sh
 
 linux:
 	@mkdir -p build/Linux-x64
@@ -50,5 +48,4 @@ win64:
 
 amigaos3:
 	@mkdir -p build/AmigaOS3
-	@./install-amiga.sh
 	m68k-amigaos-gcc darkest-hour.c -noixemul -o build/AmigaOS3/darkest-hour
