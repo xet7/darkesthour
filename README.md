@@ -97,23 +97,28 @@ Menu looks like this, there write number and press enter:
 ~/repos/darkesthour/Source$ ./menu.sh
 Darkest Hour: Build or run with dosbox/wine/qemu
 
- 1) List filetypes of built executeables  18) Build Linux-ppc
- 2) Build All				  19) Build Linux-ppc64
- 3) Build AmigaOS3			  20) Build Linux-ppc64le
- 4) Build AppleII			  21) Run DOS
- 5) Build CBM-II			  22) Run Win32
- 6) Build C64				  23) Run Win64
- 7) Build DOS				  24) Run Linux-x32
- 8) Build Plus4				  25) Run Linux-x64
- 9) Build CommodorePET40columns		  26) Run Linux-arm32
-10) Build CommodorePET80columns		  27) Run Linux-arm64
-11) Build Plus4				  28) Run Linux-m68k
-12) Build Linux-x32			  29) Run Linux-ppc
-13) Build Linux-x64			  30) Run Linux-ppc64
-14) Build Linux-arm32			  31) Run Linux-ppc64le
-15) Build Linux-arm64			  32) Run Linux-riscv64
-16) Build Linux-m68k			  33) Run Linux-s390x
-17) Build Linux-riscv64			  34) Quit
+ 1) List filetypes of built executeables  23) Build Linux-ppc64le
+ 2) Build All				  24) Build Linux-riscv64
+ 3) Build AmigaOS3			  25) Build Linux-s390x
+ 4) Build AppleII			  26) Run DOS
+ 5) Build CBM-II			  27) Run Win32
+ 6) Build C64				  28) Run Win64
+ 7) Build DOS				  29) Run Linux-x32
+ 8) Build Plus4				  30) Run Linux-x64
+ 9) Build CommodorePET40columns		  31) Run Linux-arm32
+10) Build CommodorePET80columns		  32) Run Linux-arm64
+11) Build Plus4				  33) Run Linux-m68k
+12) Build Linux-x32			  34) Run Linux-mips
+13) Build Linux-x64			  35) Run Linux-mipsel
+14) Build Linux-arm32			  36) Run Linux-mips64
+15) Build Linux-arm64			  37) Run Linux-mips64el
+16) Build Linux-mips			  38) Run Linux-ppc
+17) Build Linux-mipsel			  39) Run Linux-ppc64
+18) Build Linux-mips64			  40) Run Linux-ppc64le
+19) Build Linux-mips64el		  41) Run Linux-riscv64
+20) Build Linux-m68k			  42) Run Linux-s390x
+21) Build Linux-ppc			  43) Quit
+22) Build Linux-ppc64
 Please enter your choice:
 ```
 
