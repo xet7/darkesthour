@@ -50,10 +50,11 @@ Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
   - At [ALBs Blog](https://blog.alb42.de) are links to [Amiga Lazarus Wiki](http://fpcamigawiki.alb42.de/index.php?title=Main_Page) and online FreePascal compilers for [AmigaOS 1.x](http://home.alb42.de/fpamiga13) and [AmigaOS 3.x/4.x, AROS, MorphOS](http://home.alb42.de/fpamiga/)
 
 ### Linux
-  - These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc. These have been compiled by using ssh to connect those donated build servers.
+  - 2022-12-19 In new Source/menu.sh for use at Ubuntu amd64 is new crosscompile/run options for various amd/arm/ppc/risc-v/s390x/m68k CPUs
+  - These usually work for any Linux distro for that CPU, like Ubuntu, Debian, RedHat, etc. These have been compiled by using ssh to connect those donated build servers, after that crosscompiling was added.
   - arm64, for arm64 servers and RasPi3/RasPi4 arm64 distros like Raspberry Pi OS 64bit, Ubuntu and Ubuntu Touch. Compiled at [server donated to WeKan development by CNCF that is part of Linux Foundation](https://blog.wekan.team/2019/06/wekan-on-raspi3-and-arm64-server-now-works-and-whats-next-with-cncf/)
   - s390x, for IBM Z-Series mainframes.  Compiled at [server donated to WeKan development by IBM LinuxOne Community Cloud](https://www.openmainframeproject.org/blog/2020/11/20/wekan-open-source-kanban-on-s390x)
-  - ppc64el, for OpenPower. Compiled at [server donated to WeKan development by OpenPower MiniCloud](https://openpower.ic.unicamp.br/minicloud/)
+  - ppc64el, for OpenPower. Compiled at [server donated to WeKan development by OpenPower MiniCloud](https://openpower.ic.unicamp.br/minicloud/), but MiniCloud did shutdown.
 
 ### iOS
   - No binaries, but you can use `Mobile C` Android app [git clone example](https://github.com/dztall/ccr_resources/blob/master/Examples/fetch_mobilec_examples.c) to download this git repo, and at [darkest-hour.c](https://raw.githubusercontent.com/xet7/darkesthour/main/Source/darkest-hour.c) click `Run` button at `Mobile C` app to run game.
