@@ -10,6 +10,9 @@
   - Android-arm64
   - macOS-BigSur-arm64 (maybe with Zig ?)
   - macOS-BigSur-x64   (maybe with Zig possible?)
+  - For Zig, see:
+    - https://zig.news/kristoff/cross-compile-a-c-c-project-with-zig-3599
+    - https://github.com/mrexodia/zig-cross
 
 ## Additional run architectures?
 
