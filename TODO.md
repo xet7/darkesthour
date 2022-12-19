@@ -3,7 +3,7 @@
 ## Additional build architectures?
 
 - At `deps.sh` is currently included like `gcc-m68k-linux-gnu binutils-m68k-linux-gnu`
-- Additional can be found like ´sudo apt-cache search binutils-`
+- Additional can be found like `sudo apt-cache search binutils-`
 - it shows some more like hppa, mips, sparc etc, but are there any of that hardware available?
 - These are not crosscompiled yet from Ubuntu amd64:
   - AROS-ABIv0-i386
