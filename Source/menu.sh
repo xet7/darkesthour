@@ -67,7 +67,7 @@ do
       break
       ;;
     "Run Linux-ppc64le")
-      echo "qemu-ppc64le build/Linux-ppcle/darkest-hour"
+      echo "qemu-ppc64le build/Linux-ppc64le/darkest-hour"
       qemu-ppc64le build/Linux-ppc64le/darkest-hour
       break
       ;;
