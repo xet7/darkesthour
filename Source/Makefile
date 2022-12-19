@@ -1,6 +1,9 @@
 .PHONY: all
 
-all: deps linux-x32 linux-x64 linux-arm32 linux-arm64 linux-s390x linux-sparc64 linux-ppc linux-ppc64 linux-ppc64le linux-riscv64 linux-m68k dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
+all: deps linux-x32 linux-x64 linux-arm32 linux-arm64 linux-mips linux-mipsel linux-mips64 linux-mips64el linux-s390x linux-ppc linux-ppc64 linux-ppc64le linux-riscv64 linux-m68k dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
+
+## Notwork, removed from above all line:
+## Linux-sparc64 builds but running causes core dump
 
 deps:
 	@./deps.sh
@@ -48,6 +51,22 @@ linux-riscv64:
 linux-m68k:
 	@mkdir -p build/Linux-m68k
 	m68k-linux-gnu-gcc darkest-hour.c -o build/Linux-m68k/darkest-hour -Wall -static
+
+linux-mips:
+	@mkdir -p build/Linux-mips
+	mips-linux-gnu-gcc darkest-hour.c -o build/Linux-mips/darkest-hour -Wall -static
+
+linux-mipsel:
+	@mkdir -p build/Linux-mipsel
+	mipsel-linux-gnu-gcc darkest-hour.c -o build/Linux-mipsel/darkest-hour -Wall -static
+
+linux-mips64:
+	@mkdir -p build/Linux-mips64
+	mips64-linux-gnuabi64-gcc darkest-hour.c -o build/Linux-mips64/darkest-hour -Wall -static
+
+linux-mips64el:
+	@mkdir -p build/Linux-mips64el
+	mips64el-linux-gnuabi64-gcc darkest-hour.c -o build/Linux-mips64el/darkest-hour -Wall -static
 
 dos:
 	@mkdir -p build/DOS

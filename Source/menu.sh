@@ -9,11 +9,18 @@ echo
 PS3='Please enter your choice: '
 options=("List filetypes of built executeables" "Build All" "Build AmigaOS3" "Build AppleII" "Build CBM-II" "Build C64" \
 "Build DOS" "Build Plus4" "Build CommodorePET40columns" "Build CommodorePET80columns" "Build Plus4" "Build Linux-x32" \
-"Build Linux-x64" "Build Linux-arm32" "Build Linux-arm64" "Build Linux-m68k" "Build Linux-ppc" \
-"Build Linux-ppc64" "Build Linux-ppc64le" "Build Linux-riscv64" "Build Linux-s390x" "Build Linux-sparc64" \
-"Run DOS" "Run Win32" "Run Win64" "Run Linux-x32" "Run Linux-x64" "Run Linux-arm32" "Run Linux-arm64" \
-"Run Linux-m68k" "Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" "Run Linux-riscv64" \
-"Run Linux-sparc64" "Run Linux-s390x" "Quit")
+"Build Linux-x64" "Build Linux-arm32" "Build Linux-arm64" \
+"Build Linux-mips" "Build Linux-mipsel" "Build Linux-mips64" "Build Linux-mips64el" \
+"Build Linux-m68k" "Build Linux-ppc" \
+"Build Linux-ppc64" "Build Linux-ppc64le" "Build Linux-riscv64" "Build Linux-s390x" \
+"Run DOS" "Run Win32" "Run Win64" "Run Linux-x32" "Run Linux-x64" \
+"Run Linux-arm32" "Run Linux-arm64" \
+"Run Linux-m68k" "Run Linux-mips" "Run Linux-mipsel" "Run Linux-mips64" "Run Linux-mips64el" \
+"Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" "Run Linux-riscv64" \
+"Run Linux-s390x" "Quit")
+
+## Not working:
+## "Build Linux-sparc64" builds but "Run Linux-sparc64" gives core dump
 
 select opt in "${options[@]}"
 do
@@ -92,6 +99,27 @@ do
       make linux-m68k
       break
       ;;
+
+    "Build Linux-mips")
+      make deps
+      make linux-mips
+      break
+      ;;
+    "Build Linux-mipsel")
+      make deps
+      make linux-mipsel
+      break
+      ;;
+    "Build Linux-mips64")
+      make deps
+      make linux-mips64
+      break
+      ;;
+    "Build Linux-mips64el")
+      make deps
+      make linux-mips64el
+      break
+      ;;
     "Build Linux-ppc")
       make deps
       make linux-ppc
@@ -112,11 +140,11 @@ do
       make linux-riscv64
       break
       ;;
-    "Build Linux-sparc64")
-      make deps
-      make linux-sparc64
-      break
-      ;;
+#    "Build Linux-sparc64")
+#      make deps
+#      make linux-sparc64
+#      break
+#      ;;
     "Build Linux-s390x")
       make deps
       make linux-s390x
@@ -160,6 +188,26 @@ do
    "Run Linux-m68k")
       echo "qemu-m68k build/Linux-m68k/darkest-hour"
       qemu-m68k build/Linux-m68k/darkest-hour
+      break
+      ;;
+   "Run Linux-mips")
+      echo "qemu-mips build/Linux-mips/darkest-hour"
+      qemu-mips build/Linux-mips/darkest-hour
+      break
+      ;;
+   "Run Linux-mipsel")
+      echo "qemu-mipsel build/Linux-mipsel/darkest-hour"
+      qemu-mipsel build/Linux-mipsel/darkest-hour
+      break
+      ;;
+   "Run Linux-mips64")
+      echo "qemu-mips64 build/Linux-mips64/darkest-hour"
+      qemu-mips64 build/Linux-mips64/darkest-hour
+      break
+      ;;
+   "Run Linux-mips64el")
+      echo "qemu-mips64el build/Linux-mips64el/darkest-hour"
+      qemu-mips64el build/Linux-mips64el/darkest-hour
       break
       ;;
     "Run Linux-ppc")
