@@ -1,6 +1,6 @@
 .PHONY: all
 
-all: deps linux-x64 linux-arm32 linux-arm64 linux-s390x linux-ppc linux-ppc64 linux-ppc64le dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
+all: deps linux-x64 linux-arm32 linux-arm64 linux-s390x linux-ppc linux-ppc64 linux-ppc64le linux-riscv64 dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
 
 deps:
 	@./deps.sh
@@ -32,6 +32,10 @@ linux-ppc64:
 linux-ppc64le:
 	@mkdir -p build/Linux-ppc64le
 	powerpc64le-linux-gnu-gcc darkest-hour.c -o build/Linux-ppc64le/darkest-hour -static
+
+linux-riscv64:
+	@mkdir -p build/Linux-riscv64
+	riscv64-linux-gnu-gcc darkest-hour.c -o build/Linux-riscv64/darkest-hour -static
 
 dos:
 	@mkdir -p build/DOS
