@@ -5,7 +5,11 @@ if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 	sudo apt-get update
 	sudo apt-get -y install gcc-ia16-elf build-essential mingw-w64 p7zip-full \
 		gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi \
-		gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
+		gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu \
+		gcc-s390x-linux-gnu binutils-s390x-linux-gnu \
+		gcc-powerpc-linux-gnu binutils-powerpc-linux-gnu \
+		gcc-powerpc64-linux-gnu binutils-powerpc64-linux-gnu \
+		gcc-powerpc64le-linux-gnu binutils-powerpc64le-linux-gnu
 fi
 
 #### Build newest cc65 from source
