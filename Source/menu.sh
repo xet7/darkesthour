@@ -24,16 +24,26 @@ function pause(){
         read -p "$*"
 }
 
-echo "Darkest Hour: Build or run with qemu or other emulator"
+echo "Darkest Hour: Build or run with wine, qemu or other emulator"
 echo
 PS3='Please enter your choice: '
-options=("Build All" "Run Linux-x32" "Run Linux-x64" "Run Linux-arm32" "Run Linux-arm64" "Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" "Run Linux-riscv64" "Run Linux-s390x" "Quit")
+options=("Build All" "Run Win32" "Run Win64" "Run Linux-x32" "Run Linux-x64" "Run Linux-arm32" "Run Linux-arm64" "Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" "Run Linux-riscv64" "Run Linux-s390x" "Quit")
 
 select opt in "${options[@]}"
 do
   case $opt in
     "Build All")
       make
+      break
+      ;;
+    "Run Win32")
+      echo "wine ./build/Win32/darkest-hour-win32.exe"
+      wine ./build/Win32/darkest-hour-win32.exe
+      break
+      ;;
+    "Run Win64")
+      echo "wine ./build/Win64/darkest-hour-win64.exe"
+      wine ./build/Win64/darkest-hour-win64.exe
       break
       ;;
     "Run Linux-x32")
