@@ -1,15 +1,5 @@
 #!/bin/bash
 
-#AmigaOS3
-#build/AmigaOS3/darkest-hour
-#AppleII/DarkestHour
-#C64/DarkestHour.prg
-#CBM-II/DarkestHour.prg
-#CommodorePET40columns/DarkestHour.prg
-#CommodorePET80columns/DarkestHour.prg
-#DOS/DARKHOUR.EXE
-#Plus4/DarkestHour.prg
-
 function pause(){
         read -p "$*"
 }
