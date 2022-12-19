@@ -1,5 +1,7 @@
 # TECHNICAL NOTES
 
+From @GeekOnSkates
+
 Written in standard C, with no dependencies outside the standard library, this game is designed to be VERY portable.  My goal is to have pre-compiled binaries for:
 
 * The following Commodore systems: C64, PET, Plus/4, CBM-II
