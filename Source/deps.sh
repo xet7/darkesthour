@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#### If crosscompilers and emulators do not exist, add them
 if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 	sudo add-apt-repository -y ppa:tkchia/build-ia16
 	sudo apt-get update
@@ -16,7 +17,7 @@ if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 		dosbox wine32 wine64 qemu-system qemu-user
 fi
 
-#### Build newest cc65 from source
+#### Build newest cc65 compiler for C64 etc from source
 if [ ! -d archive/cc65 ] ; then
 	(cd archive && git clone https://github.com/cc65/cc65 && cd cc65 && make)
 fi
@@ -26,6 +27,7 @@ fi
 #	(cd archive && 7z x cc65.7z)
 #fi
 
+#### Install Linux i386 to AmigaOS3 crosscompiler
 if [ -L /usr/local/bin/68k-amigaos-gcc ] ; then
 	(sudo apt-get -y install gcc-multilib)
 	(sudo cp archive/m68k-amigaos_linux_i386.tar.gz /tmp/)
