@@ -1,41 +1,45 @@
 .PHONY: all
 
-all: deps linux-x64 linux-arm32 linux-arm64 linux-s390x linux-ppc linux-ppc64 linux-ppc64le linux-riscv64 dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
+all: deps linux-x32 linux-x64 linux-arm32 linux-arm64 linux-s390x linux-ppc linux-ppc64 linux-ppc64le linux-riscv64 dos c64 pet pet80 plus4 cbm apple2 win32 win64 amigaos3
 
 deps:
 	@./deps.sh
 
+linux-x32:
+	@mkdir -p build/Linux-x32
+	gcc -m32 darkest-hour.c -o build/Linux-x32/darkest-hour -Wall -static
+
 linux-x64:
 	@mkdir -p build/Linux-x64
-	gcc darkest-hour.c -o build/Linux-x64/darkest-hour -Wall
+	gcc darkest-hour.c -o build/Linux-x64/darkest-hour -Wall -static
 
 linux-arm32:
 	@mkdir -p build/Linux-arm32
-	arm-linux-gnueabi-gcc darkest-hour.c -o build/Linux-arm32/darkest-hour -static
+	arm-linux-gnueabi-gcc darkest-hour.c -o build/Linux-arm32/darkest-hour -Wall -static
 
 linux-arm64:
 	@mkdir -p build/Linux-arm64
-	aarch64-linux-gnu-gcc darkest-hour.c -o build/Linux-arm64/darkest-hour -static
+	aarch64-linux-gnu-gcc darkest-hour.c -o build/Linux-arm64/darkest-hour -Wall -static
 
 linux-s390x:
 	@mkdir -p build/Linux-s390x
-	s390x-linux-gnu-gcc darkest-hour.c -o build/Linux-s390x/darkest-hour -static
+	s390x-linux-gnu-gcc darkest-hour.c -o build/Linux-s390x/darkest-hour -Wall -static
 
 linux-ppc:
 	@mkdir -p build/Linux-ppc
-	powerpc-linux-gnu-gcc darkest-hour.c -o build/Linux-ppc/darkest-hour -static
+	powerpc-linux-gnu-gcc darkest-hour.c -o build/Linux-ppc/darkest-hour -Wall -static
 
 linux-ppc64:
 	@mkdir -p build/Linux-ppc64
-	powerpc64-linux-gnu-gcc darkest-hour.c -o build/Linux-ppc64/darkest-hour -static
+	powerpc64-linux-gnu-gcc darkest-hour.c -o build/Linux-ppc64/darkest-hour -Wall -static
 
 linux-ppc64le:
 	@mkdir -p build/Linux-ppc64le
-	powerpc64le-linux-gnu-gcc darkest-hour.c -o build/Linux-ppc64le/darkest-hour -static
+	powerpc64le-linux-gnu-gcc darkest-hour.c -o build/Linux-ppc64le/darkest-hour -Wall -static
 
 linux-riscv64:
 	@mkdir -p build/Linux-riscv64
-	riscv64-linux-gnu-gcc darkest-hour.c -o build/Linux-riscv64/darkest-hour -static
+	riscv64-linux-gnu-gcc darkest-hour.c -o build/Linux-riscv64/darkest-hour -Wall -static
 
 dos:
 	@mkdir -p build/DOS

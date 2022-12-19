@@ -10,7 +10,9 @@ if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 		gcc-powerpc-linux-gnu binutils-powerpc-linux-gnu \
 		gcc-powerpc64-linux-gnu binutils-powerpc64-linux-gnu \
 		gcc-powerpc64le-linux-gnu binutils-powerpc64le-linux-gnu \
-		gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu
+		gcc-riscv32-linux-gnu binutils-riscv32-linux-gnu \
+		gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu \
+		qemu-system qemu-user
 fi
 
 #### Build newest cc65 from source
