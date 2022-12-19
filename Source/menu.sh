@@ -8,32 +8,32 @@
 #CommodorePET40columns/DarkestHour.prg
 #CommodorePET80columns/DarkestHour.prg
 #DOS/DARKHOUR.EXE
-#Linux-arm32/darkest-hour
-#Linux-arm64/darkest-hour
-#Linux-ppc/darkest-hour
-#Linux-ppc64/darkest-hour
-#Linux-ppc64le/darkest-hour
-#Linux-riscv64/darkest-hour
-#Linux-s390x/darkest-hour
-#Linux-x64/darkest-hour
 #Plus4/DarkestHour.prg
-#Win32/darkest-hour-win32.exe
-#Win64/darkest-hour-win64.exe
 
 function pause(){
         read -p "$*"
 }
 
-echo "Darkest Hour: Build or run with wine, qemu or other emulator"
+echo "Darkest Hour: Build or run with dosbox/wine/qemu"
 echo
 PS3='Please enter your choice: '
-options=("Build All" "Run Win32" "Run Win64" "Run Linux-x32" "Run Linux-x64" "Run Linux-arm32" "Run Linux-arm64" "Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" "Run Linux-riscv64" "Run Linux-s390x" "Quit")
+options=("List filetypes of built executeables" "Build All" "Run DOS" "Run Win32" "Run Win64" "Run Linux-x32" "Run Linux-x64" "Run Linux-arm32" "Run Linux-arm64" "Run Linux-m68k" "Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" "Run Linux-riscv64" "Run Linux-s390x" "Quit")
 
 select opt in "${options[@]}"
 do
   case $opt in
+    "List filetypes of built exe file")
+      echo "file build/*/*"
+      file build/*/*
+      break
+      ;;
     "Build All")
       make
+      break
+      ;;
+    "Run DOS")
+      echo "dosbox ./build/DOS/DARKHOUR.EXE"
+      dosbox ./build/DOS/DARKHOUR.EXE
       break
       ;;
     "Run Win32")
@@ -64,6 +64,11 @@ do
     "Run Linux-arm64")
       echo "qemu-aarch64 build/Linux-arm64/darkest-hour"
       qemu-aarch64 build/Linux-arm64/darkest-hour
+      break
+      ;;
+   "Run Linux-m68k")
+      echo "qemu-m68k build/Linux-m68k/darkest-hour"
+      qemu-m68k build/Linux-m68k/darkest-hour
       break
       ;;
     "Run Linux-ppc")

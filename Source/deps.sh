@@ -12,7 +12,8 @@ if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 		gcc-powerpc64le-linux-gnu binutils-powerpc64le-linux-gnu \
 		gcc-riscv32-linux-gnu binutils-riscv32-linux-gnu \
 		gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu \
-		wine32 wine64 qemu-system qemu-user
+		gcc-m68k-linux-gnu binutils-m68k-linux-gnu \
+		dosbox wine32 wine64 qemu-system qemu-user
 fi
 
 #### Build newest cc65 from source
