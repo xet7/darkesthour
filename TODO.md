@@ -2,6 +2,11 @@
 
 From @xet7
 
+## Changeable filename?
+
+- Change everywhere that it's not hardcoded to filename "darkesthour" or "darkesthour.c",
+  but instead it's changeable variable in settings.
+
 ## Additional build architectures?
 
 - At `deps.sh` is currently included like `gcc-m68k-linux-gnu binutils-m68k-linux-gnu`
