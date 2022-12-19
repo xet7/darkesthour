@@ -14,6 +14,7 @@ if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 		gcc-riscv32-linux-gnu binutils-riscv32-linux-gnu \
 		gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu \
 		gcc-m68k-linux-gnu binutils-m68k-linux-gnu \
+		gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \
 		dosbox wine32 wine64 qemu-system qemu-user
 fi
 
