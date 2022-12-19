@@ -82,21 +82,44 @@ On the Apple 2, instead of pressing Return, you may have to press Space a bunch 
 
 [At this repo directory: Source](https://github.com/xet7/darkesthour/tree/main/Source). There is darkest-hour.c that works on all platforms.
 
-Installing all dependencies and building all at newest Ubuntu amd64:
+Menu to build and run at newest Ubuntu amd64:
 
 ```
 git clone https://github.com/xet7/darkesthour
 
 cd darkesthour/Source
 
-make
+./menu.sh
+```
+Menu looks like this, there write number and press enter:
+```
+~/repos/darkesthour/Source$ ./menu.sh
+Darkest Hour: Build or run with dosbox/wine/qemu
+
+ 1) List filetypes of built executeables  18) Build Linux-ppc
+ 2) Build All				  19) Build Linux-ppc64
+ 3) Build AmigaOS3			  20) Build Linux-ppc64le
+ 4) Build AppleII			  21) Run DOS
+ 5) Build CBM-II			  22) Run Win32
+ 6) Build C64				  23) Run Win64
+ 7) Build DOS				  24) Run Linux-x32
+ 8) Build Plus4				  25) Run Linux-x64
+ 9) Build CommodorePET40columns		  26) Run Linux-arm32
+10) Build CommodorePET80columns		  27) Run Linux-arm64
+11) Build Plus4				  28) Run Linux-m68k
+12) Build Linux-x32			  29) Run Linux-ppc
+13) Build Linux-x64			  30) Run Linux-ppc64
+14) Build Linux-arm32			  31) Run Linux-ppc64le
+15) Build Linux-arm64			  32) Run Linux-riscv64
+16) Build Linux-m68k			  33) Run Linux-s390x
+17) Build Linux-riscv64			  34) Quit
+Please enter your choice:
 ```
 
-Building only Linux: `make linux`
-
-Binaries built mostly on Linux Mint x64, using compilers and crosscompilers. Linux binaries for arm64/s390x/ppc64el were built on Linux servers
-donated to [Wekan Open Source kanban](https://wekan.github.io) project by CNCF/Linux Foundation, IBM LinuxOne Community Cloud,
-OpenPower MiniCloud and MacStadium.
+Binaries built mostly on Linux Mint x64, using compilers and crosscompilers.
+Before setting up some of the above Linux crosscompilers at 2022-12-19, Linux binaries for arm64/s390x/ppc64el
+were built on Linux servers donated to [Wekan Open Source kanban](https://wekan.github.io) project by
+CNCF/Linux Foundation, IBM LinuxOne Community Cloud, OpenPower MiniCloud and MacStadium.
 
 # License
 
