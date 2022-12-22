@@ -7,6 +7,11 @@ From @xet7
 - Change everywhere that it's not hardcoded to filename "darkesthour" or "darkesthour.c",
   but instead it's changeable variable in settings.
 
+## Check C code for type safety?
+
+- https://github.com/microsoft/checkedc
+- https://news.ycombinator.com/item?id=34084455
+
 ## Additional build architectures?
 
 - At `deps.sh` is currently included like `gcc-m68k-linux-gnu binutils-m68k-linux-gnu`
