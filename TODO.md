@@ -12,6 +12,10 @@ From @xet7
 - https://github.com/microsoft/checkedc
 - https://news.ycombinator.com/item?id=34084455
 
+## Learn C
+
+- https://news.ycombinator.com/item?id=34105770
+
 ## Additional build architectures?
 
 - At `deps.sh` is currently included like `gcc-m68k-linux-gnu binutils-m68k-linux-gnu`
