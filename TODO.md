@@ -15,6 +15,7 @@ From @xet7
 ## Learn C
 
 - https://news.ycombinator.com/item?id=34105770
+- Mobile C examples at https://github.com/dztall/ccr_examples
 
 ## Additional build architectures?
 
