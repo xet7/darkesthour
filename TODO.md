@@ -55,3 +55,46 @@ From @xet7
   - CommodorePET40columns/DarkestHour.prg
   - CommodorePET80columns/DarkestHour.prg
   - Plus4/DarkestHour.prg
+
+## Other compiling, transpiling related, from post of xet7 elsewhere
+
+I have not got Emscripten to work yet.
+
+With Haxe https://haxe.org I have transpiled hello world
+https://github.com/wekan/hx/blob/main/prototypes/code/hello/Wekan.hx to
+some other programming languages https://github.com/wekan/hx/blob/main/prototypes/code/hello/build.sh#L296 .
+I'm also trying to learn HaxeUI http://haxeui.org .
+
+But I think HaxeUI is also too heavy, similar like Godot to HTML5 would be,
+I would need to hand-code HTML4 to get smallest possible webpage size for web apps.
+
+Today 2023-01-23 I found w2c2:
+
+- https://twitter.com/turbolent/status/1617231570573873152
+- https://github.com/turbolent/w2c2
+
+I'm trying to learn wax https://github.com/LingDong-/wax , it has some
+strange Lisp like AST syntax code, it is rare in so that it can also transpile to Swift.
+Transpiled code is near like hand-generated simple syntax, not much extra.
+
+I did at 2018-2019 fork OneLang https://ide.onelang.io so that I could run it
+locally https://github.com/xet7?tab=repositories&q=onelang ,
+but I have not looked has that language made some progress.
+
+Nim with Python-like syntax can transpile to Javascript https://nim-lang.org
+
+V with Go-like syntax can also transpile to Javascript https://vlang.io
+
+Because doing big quality control app with MS Access 97 kind of made me like VBA and SQL,
+I have been looking at various basics at https://github.com/JohnBlood/awesome-basic
+like https://github.com/google/wwwbasic , DecimalBasic https://hp.vector.co.jp/authors/VA008683/english/
+that can also be transpiled to Lazarus/FreePascal, Gambas Basic https://github.com/wekan/hx/tree/main/prototypes/ui/gambas
+
+And while WeKan https://wekan.github.io is made with Javascript, some have paid me to write some
+WeKan related Python, and some others sent Python too https://github.com/wekan/wekan/wiki/Python
+
+I did some benchmarks because I'm trying to make WeKan faster https://github.com/wekan/hx/tree/main/prototypes/code/webserver
+
+Current lightweight mostly HTML4 WeKan prototype is still in beginning stages at https://github.com/wekan/php/blob/main/public/index.php
+
+Current Meteor WeKan requires modern desktop or mobile browser like Safari/Firefox/Chromium based.
