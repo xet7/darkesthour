@@ -77,11 +77,20 @@ Game binaries by [@GeekOnSkates](https://github.com/GeekOnSkates):
 
 ## A note about the Apple 2 disk
 
-On the Apple 2, instead of pressing Return, you may have to press Space a bunch of times after typing a command.  This is due to a bug in the C compiler I used that only affects the Apple 2.  I tried several different ways to fix it, but none have worked.  But the game does run on my Apple 2 emulator, that minor catch aside.
+On the Apple 2, instead of pressing Return, you may have to
+press Space a bunch of times after typing a command.
+This is due to a bug in the C compiler I used that
+only affects the Apple 2.
+I tried several different ways to fix it, but none have worked.
+But the game does run on my Apple 2 emulator, that minor catch aside.
 
 ## Source
 
-[At this repo directory: Source](https://github.com/xet7/darkesthour/tree/main/Source). There is darkest-hour.c that works on all platforms.
+[At this repo directory: Source](https://github.com/xet7/darkesthour/tree/main/Source).
+There is darkest-hour.c that works on all platforms.
+
+Filenames are in `darkesthour/Source/settings.sh` so you can rename them,
+if you are using this `./menu.sh` crosscompiler for some other code.
 
 Menu to build and run at newest Ubuntu amd64:
 
