@@ -98,3 +98,7 @@ I did some benchmarks because I'm trying to make WeKan faster https://github.com
 Current lightweight mostly HTML4 WeKan prototype is still in beginning stages at https://github.com/wekan/php/blob/main/public/index.php
 
 Current Meteor WeKan requires modern desktop or mobile browser like Safari/Firefox/Chromium based.
+
+Related to Haxe, there is this diff tool made with Haxe https://github.com/paulfitz/daff ,
+it also uses some older fork of Haxe that has transpile to Ruby support.
+I did send some PR sometime to daff project to fix some stuff I found.
