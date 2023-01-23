@@ -1,10 +1,17 @@
 #!/bin/bash
 
+#====== SETTINGS START =======
+
+# Read settings for filenames from settings.sh
+source settings.sh
+
+#====== SETTINGS END =======
+
 function pause(){
         read -p "$*"
 }
 
-echo "Darkest Hour: Build or run with dosbox/wine/qemu"
+echo "$NAMESPACE: Build or run with dosbox/wine/qemu"
 echo
 PS3='Please enter your choice: '
 options=("List filetypes of built executeables" "Build All" "Build AmigaOS3" "Build AppleII" "Build CBM-II" "Build C64" \
@@ -30,214 +37,324 @@ do
       file build/*/*
       break
       ;;
-    "Build All")
-      make
+   "Build All")
+      ./deps.sh
+      mkdir -p build/AmigaOS3
+      echo m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
+      m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
+      mkdir -p build/AppleII
+      echo ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
+      ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
+      mkdir -p build/C64
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
+      mkdir -p build/CBM-II
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
+      mkdir -p build/CommodorePET40columns
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
+      mkdir -p build/CommodorePET80columns
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
+      mkdir -p build/DOS
+      echo ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
+      ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
+      mkdir -p build/Plus4
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
+      mkdir -p build/Linux-x32
+      echo gcc -m32 $NAMEMINUS.c -o build/Linux-x32/$NAMEMINUS -Wall -static
+      gcc -m32 $NAMEMINUS.c -o build/Linux-x32/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-x64
+      echo gcc $NAMEMINUS.c -o build/Linux-x64/$NAMEMINUS -Wall -static
+      gcc $NAMEMINUS.c -o build/Linux-x64/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-arm32
+      echo arm-linux-gnueabi-gcc $NAMEMINUS.c -o build/Linux-arm32/$NAMEMINUS -Wall -static
+      arm-linux-gnueabi-gcc $NAMEMINUS.c -o build/Linux-arm32/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-arm64
+      echo aarch64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-arm64/$NAMEMINUS -Wall -static
+      aarch64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-arm64/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-m68k
+      echo m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
+      m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mips
+      echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+      mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mipsel
+      echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+      mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mips64
+      echo mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
+      mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mips64el
+      echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-ppc
+      echo powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
+      powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-ppc64
+      echo powerpc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64/$NAMEMINUS -Wall -static
+      powerpc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-ppc64le
+      echo powerpc64le-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64le/$NAMEMINUS -Wall -static
+      powerpc64le-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64le/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-riscv64
+      echo riscv64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-riscv64/$NAMEMINUS -Wall -static
+      riscv64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-riscv64/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-s390x
+      echo s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
+      s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
       break
       ;;
    "Build AmigaOS3")
-      make deps
-      make amigaos3
+      ./deps.sh
+      mkdir -p build/AmigaOS3
+      echo m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
+      m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       break
       ;;
    "Build AppleII")
-      make deps
-      make apple2
+      ./deps.sh
+      mkdir -p build/AppleII
+      echo ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
+      ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
       break
       ;;
    "Build C64")
-      make deps
-      make c64
+      ./deps.sh
+      mkdir -p build/C64
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
       break
       ;;
     "Build CBM-II")
-      make deps
-      make cbm
+      ./deps.sh
+      mkdir -p build/CBM-II
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
       break
       ;;
     "Build CommodorePET40columns")
-      make deps
-      make pet40
+      ./deps.sh
+      mkdir -p build/CommodorePET40columns
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
       break
       ;;
     "Build CommodorePET80columns")
-      make deps
-      make pet80
+      ./deps.sh
+      mkdir -p build/CommodorePET80columns
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
       break
       ;;
     "Build DOS")
-      make deps
-      make dos
+      ./deps.sh
+      mkdir -p build/DOS
+      echo ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
+      ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
       break
       ;;
     "Build Plus4")
-      make deps
-      make plus4
+      ./deps.sh
+      mkdir -p build/Plus4
+      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
       break
       ;;
     "Build Linux-x32")
-      make deps
-      make linux-x32
+      ./deps.sh
+      mkdir -p build/Linux-x32
+      echo gcc -m32 $NAMEMINUS.c -o build/Linux-x32/$NAMEMINUS -Wall -static
+      gcc -m32 $NAMEMINUS.c -o build/Linux-x32/$NAMEMINUS -Wall -static
       break
       ;;
    "Build Linux-x64")
-      make deps
-      make linux-x64
+      ./deps.sh
+      mkdir -p build/Linux-x64
+      echo gcc $NAMEMINUS.c -o build/Linux-x64/$NAMEMINUS -Wall -static
+      gcc $NAMEMINUS.c -o build/Linux-x64/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-arm32")
-      make deps
-      make linux-arm32
+      ./deps.sh
+      mkdir -p build/Linux-arm32
+      echo arm-linux-gnueabi-gcc $NAMEMINUS.c -o build/Linux-arm32/$NAMEMINUS -Wall -static
+      arm-linux-gnueabi-gcc $NAMEMINUS.c -o build/Linux-arm32/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-arm64")
-      make deps
-      make linux-arm64
+      ./deps.sh
+      mkdir -p build/Linux-arm64
+      echo aarch64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-arm64/$NAMEMINUS -Wall -static
+      aarch64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-arm64/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-m68k")
-      make deps
-      make linux-m68k
+      ./deps.sh
+      mkdir -p build/Linux-m68k
+      echo m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
+      m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
       break
       ;;
-
     "Build Linux-mips")
-      make deps
-      make linux-mips
+      ./deps.sh
+      mkdir -p build/Linux-mips
+      echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+      mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-mipsel")
-      make deps
-      make linux-mipsel
+      ./deps.sh
+      mkdir -p build/Linux-mipsel
+      echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+      mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-mips64")
-      make deps
-      make linux-mips64
+      ./deps.sh
+      mkdir -p build/Linux-mips64
+      echo mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
+      mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-mips64el")
-      make deps
-      make linux-mips64el
+      ./deps.sh
+      mkdir -p build/Linux-mips64el
+      echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-ppc")
-      make deps
-      make linux-ppc
+      ./deps.sh
+      mkdir -p build/Linux-ppc
+      echo powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
+      powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-ppc64")
-      make deps
-      make linux-ppc64
+      ./deps.sh
+      mkdir -p build/Linux-ppc64
+      echo powerpc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64/$NAMEMINUS -Wall -static
+      powerpc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-ppc64le")
-      make deps
-      make linux-ppc64le
+      ./deps.sh
+      mkdir -p build/Linux-ppc64le
+      echo powerpc64le-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64le/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-riscv64")
-      make deps
-      make linux-riscv64
+      ./deps.sh
+      mkdir -p build/Linux-riscv64
+      echo riscv64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-riscv64/$NAMEMINUS -Wall -static
+      riscv64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-riscv64/$NAMEMINUS -Wall -static
       break
       ;;
 #    "Build Linux-sparc64")
-#      make deps
-#      make linux-sparc64
+#      ./deps.sh
+#      mkdir -p build/Linux-sparc64
+#      echo sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
+#      sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
 #      break
 #      ;;
     "Build Linux-s390x")
-      make deps
-      make linux-s390x
+      ./deps.sh
+      mkdir -p build/Linux-s390x
+      echo s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
+      s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
       break
       ;;
     "Run DOS")
-      echo "dosbox ./build/DOS/DARKHOUR.EXE"
-      dosbox ./build/DOS/DARKHOUR.EXE
+      echo "dosbox ./build/DOS/$NAMEDOS.EXE"
+      dosbox ./build/DOS/$NAMEDOS.EXE
       break
       ;;
     "Run Win32")
-      echo "wine ./build/Win32/darkest-hour-win32.exe"
-      wine ./build/Win32/darkest-hour-win32.exe
+      echo "wine ./build/Win32/$NAMEMINUS-win32.exe"
+      wine ./build/Win32/$NAMEMINUS-win32.exe
       break
       ;;
     "Run Win64")
-      echo "wine ./build/Win64/darkest-hour-win64.exe"
-      wine ./build/Win64/darkest-hour-win64.exe
+      echo "wine ./build/Win64/$NAMEMINUS-win64.exe"
+      wine ./build/Win64/$NAMEMINUS-win64.exe
       break
       ;;
     "Run Linux-x32")
-      echo "qemu-i386 ./build/Linux-x32/darkest-hour"
-      qemu-i386 ./build/Linux-x32/darkest-hour
+      echo "qemu-i386 ./build/Linux-x32/$NAMEMINUS"
+      qemu-i386 ./build/Linux-x32/$NAMEMINUS
       break
       ;;
     "Run Linux-x64")
-      echo "qemu-x86_64 ./build/Linux-x64/darkest-hour"
-      qemu-x86_64 ./build/Linux-x64/darkest-hour
+      echo "qemu-x86_64 ./build/Linux-x64/$NAMEMINUS"
+      qemu-x86_64 ./build/Linux-x64/$NAMEMINUS
       break
       ;;
     "Run Linux-arm32")
-      echo "qemu-arm build/Linux-arm32/darkest-hour"
-      qemu-arm build/Linux-arm32/darkest-hour
+      echo "qemu-arm build/Linux-arm32/$NAMEMINUS"
+      qemu-arm build/Linux-arm32/$NAMEMINUS
       break
       ;;
     "Run Linux-arm64")
-      echo "qemu-aarch64 build/Linux-arm64/darkest-hour"
-      qemu-aarch64 build/Linux-arm64/darkest-hour
+      echo "qemu-aarch64 build/Linux-arm64/$NAMEMINUS"
+      qemu-aarch64 build/Linux-arm64/$NAMEMINUS
       break
       ;;
    "Run Linux-m68k")
-      echo "qemu-m68k build/Linux-m68k/darkest-hour"
-      qemu-m68k build/Linux-m68k/darkest-hour
+      echo "qemu-m68k build/Linux-m68k/$NAMEMINUS"
+      qemu-m68k build/Linux-m68k/$NAMEMINUS
       break
       ;;
    "Run Linux-mips")
-      echo "qemu-mips build/Linux-mips/darkest-hour"
-      qemu-mips build/Linux-mips/darkest-hour
+      echo "qemu-mips build/Linux-mips/$NAMEMINUS"
+      qemu-mips build/Linux-mips/$NAMEMINUS
       break
       ;;
    "Run Linux-mipsel")
-      echo "qemu-mipsel build/Linux-mipsel/darkest-hour"
-      qemu-mipsel build/Linux-mipsel/darkest-hour
+      echo "qemu-mipsel build/Linux-mipsel/$NAMEMINUS"
+      qemu-mipsel build/Linux-mipsel/$NAMEMINUS
       break
       ;;
    "Run Linux-mips64")
-      echo "qemu-mips64 build/Linux-mips64/darkest-hour"
-      qemu-mips64 build/Linux-mips64/darkest-hour
+      echo "qemu-mips64 build/Linux-mips64/$NAMEMINUS"
+      qemu-mips64 build/Linux-mips64/$NAMEMINUS
       break
       ;;
    "Run Linux-mips64el")
-      echo "qemu-mips64el build/Linux-mips64el/darkest-hour"
-      qemu-mips64el build/Linux-mips64el/darkest-hour
+      echo "qemu-mips64el build/Linux-mips64el/$NAMEMINUS"
+      qemu-mips64el build/Linux-mips64el/$NAMEMINUS
       break
       ;;
     "Run Linux-ppc")
-      echo "qemu-ppc build/Linux-ppc/darkest-hour"
-      qemu-ppc build/Linux-ppc/darkest-hour
+      echo "qemu-ppc build/Linux-ppc/$NAMEMINUS"
+      qemu-ppc build/Linux-ppc/$NAMEMINUS
       break
       ;;
     "Run Linux-ppc64")
-      echo "qemu-ppc64 build/Linux-ppc64/darkest-hour"
-      qemu-ppc64 build/Linux-ppc64/darkest-hour
+      echo "qemu-ppc64 build/Linux-ppc64/$NAMEMINUS"
+      qemu-ppc64 build/Linux-ppc64/$NAMEMINUS
       break
       ;;
     "Run Linux-ppc64le")
-      echo "qemu-ppc64le build/Linux-ppc64le/darkest-hour"
-      qemu-ppc64le build/Linux-ppc64le/darkest-hour
+      echo "qemu-ppc64le build/Linux-ppc64le/$NAMEMINUS"
+      qemu-ppc64le build/Linux-ppc64le/$NAMEMINUS
       break
       ;;
     "Run Linux-riscv64")
-      echo "qemu-riscv64 build/Linux-riscv64/darkest-hour"
-      qemu-riscv64 build/Linux-riscv64/darkest-hour
+      echo "qemu-riscv64 build/Linux-riscv64/$NAMEMINUS"
+      qemu-riscv64 build/Linux-riscv64/$NAMEMINUS
       break
       ;;
     "Run Linux-s390x")
-      echo "qemu-s390x build/Linux-s390x/darkest-hour"
-      qemu-s390x build/Linux-s390x/darkest-hour
+      echo "qemu-s390x build/Linux-s390x/$NAMEMINUS"
+      qemu-s390x build/Linux-s390x/$NAMEMINUS
       break
       ;;
     "Run Linux-sparc64")
-      echo "qemu-sparc64 build/Linux-sparc64/darkest-hour"
-      qemu-sparc64 build/Linux-sparc64/darkest-hour
+      echo "qemu-sparc64 build/Linux-sparc64/$NAMEMINUS"
+      qemu-sparc64 build/Linux-sparc64/$NAMEMINUS
       break
       ;;
     "Quit")
