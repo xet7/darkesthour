@@ -32,7 +32,7 @@ options=("List filetypes of built executeables" "Build All" "Build AmigaOS3" "Bu
 select opt in "${options[@]}"
 do
   case $opt in
-    "List filetypes of built exe file")
+    "List filetypes of built executeables")
       echo "file build/*/*"
       file build/*/*
       break
