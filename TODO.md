@@ -17,9 +17,14 @@ From @xet7
 ## Learn C
 
 - https://news.ycombinator.com/item?id=34105770
-- For reading and writing files:
-  - For modern OS, try Mobile C examples at https://github.com/dztall/ccr_examples
-  - For C64, try https://github.com/TheGeekOnSkates/RetroDisk
+
+## Reading and writing files
+
+- For modern OS, try Mobile C examples at https://github.com/dztall/ccr_examples
+- For C64, try:
+  - https://github.com/TheGeekOnSkates/RetroDisk
+  - Related http://8bit-unity.com
+  - Related https://github.com/cc65/wiki/wiki
 
 ## Additional build architectures?
 
