@@ -1,11 +1,13 @@
-# TODO
-
 From @xet7
 
-## Changeable filename?
+# DONE
+
+## Changeable filename
 
 - Change everywhere that it's not hardcoded to filename "darkesthour" or "darkesthour.c",
   but instead it's changeable variable in settings.
+
+# TODO
 
 ## Check C code for type safety?
 
