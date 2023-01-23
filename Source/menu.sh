@@ -14,8 +14,11 @@ function pause(){
 echo "$NAMESPACE: Build or run with dosbox/wine/qemu"
 echo
 PS3='Please enter your choice: '
-options=("List filetypes of built executeables" "Build All" "Build AmigaOS3" "Build AppleII" "Build CBM-II" "Build C64" \
-"Build DOS" "Build Plus4" "Build CommodorePET40columns" "Build CommodorePET80columns" "Build Plus4" "Build Linux-x32" \
+options=("List filetypes of built executeables" "Build All" "Build AmigaOS3" \
+"Build AppleII" "Build CBM-II" "Build C64" \
+"Build DOS" "Build Win32" "Build Win64" "Build Plus4" \
+"Build CommodorePET40columns" "Build CommodorePET80columns" \
+"Build Plus4" "Build Linux-x32" \
 "Build Linux-x64" "Build Linux-arm32" "Build Linux-arm64" \
 "Build Linux-mips" "Build Linux-mipsel" "Build Linux-mips64" "Build Linux-mips64el" \
 "Build Linux-m68k" "Build Linux-ppc" \
@@ -60,6 +63,12 @@ do
       mkdir -p build/DOS
       echo ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
       ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
+      mkdir -p build/Win32
+      echo i686-w64-mingw32-gcc -o ./build/Win32/$NAMEMINUS-win32.exe ./$NAMEMINUS.c
+      i686-w64-mingw32-gcc -o ./build/Win32/$NAMEMINUS-win32.exe ./$NAMEMINUS.c
+      mkdir -p build/Win64
+      echo x86_64-w64-mingw32-gcc -o ./build/Win64/$NAMEMINUS-win64.exe ./$NAMEMINUS.c
+      x86_64-w64-mingw32-gcc -o ./build/Win64/$NAMEMINUS-win64.exe ./$NAMEMINUS.c
       mkdir -p build/Plus4
       echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
       ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
@@ -154,6 +163,21 @@ do
       mkdir -p build/DOS
       echo ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
       ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
+      break
+      ;;
+
+    "Build Win32")
+      ./deps.sh
+      mkdir -p build/Win32
+      echo i686-w64-mingw32-gcc -o ./build/Win32/$NAMEMINUS-win32.exe ./$NAMEMINUS.c
+      i686-w64-mingw32-gcc -o ./build/Win32/$NAMEMINUS-win32.exe ./$NAMEMINUS.c
+      break
+      ;;
+    "Build Win64")
+      ./deps.sh
+      mkdir -p build/Win64
+      echo x86_64-w64-mingw32-gcc -o ./build/Win64/$NAMEMINUS-win64.exe ./$NAMEMINUS.c
+      x86_64-w64-mingw32-gcc -o ./build/Win64/$NAMEMINUS-win64.exe ./$NAMEMINUS.c
       break
       ;;
     "Build Plus4")
