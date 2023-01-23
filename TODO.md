@@ -64,6 +64,8 @@ From @xet7
   - CommodorePET40columns/DarkestHour.prg
   - CommodorePET80columns/DarkestHour.prg
   - Plus4/DarkestHour.prg
+- VICE emulator has commands like "xvic" or "xpet" or "x64". Try could those start emulator with DarkestHour app directly?
+- Can other emulators start app directly too?
 
 ## Other compiling, transpiling related, from post of xet7 elsewhere
 
