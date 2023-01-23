@@ -89,7 +89,7 @@ But the game does run on my Apple 2 emulator, that minor catch aside.
 [At this repo directory: Source](https://github.com/xet7/darkesthour/tree/main/Source).
 There is darkest-hour.c that works on all platforms.
 
-Filenames are in `darkesthour/Source/settings.sh` so you can rename them,
+**Filenames** are in [darkesthour/Source/settings.sh](https://github.com/xet7/darkesthour/blob/main/Source/settings.sh) so you can rename them,
 if you are using this `./menu.sh` crosscompiler for some other code.
 
 Menu to build and run at newest Ubuntu amd64:
