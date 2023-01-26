@@ -13,17 +13,18 @@ if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 		gcc-powerpc64le-linux-gnu binutils-powerpc64le-linux-gnu \
 		gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu \
 		gcc-m68k-linux-gnu binutils-m68k-linux-gnu \
-		#gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \   ## Running causes core dump
-		gcc-mips-linux-gnu binutils-mips-linux-gnu \
-		gcc-mipsel-linux-gnu binutils-mipsel-linux-gnu \
 		gcc-mips64-linux-gnuabi64 binutils-mips64-linux-gnuabi64 \
-		gcc-mips64el-linux-gnuabi64 binutils-mips64el-linux-gnuabi64 \
+		dosbox wine32 wine64 qemu-system qemu-user --reinstall
+
+		#gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \   ## Running causes core dump
+		#gcc-mips-linux-gnu binutils-mips-linux-gnu \
+		#gcc-mipsel-linux-gnu binutils-mipsel-linux-gnu \
+		#gcc-mips64el-linux-gnuabi64 binutils-mips64el-linux-gnuabi64 \
 		#gcc-mipsisa32r6-linux-gnu binutils-mipsisa32r6-linux-gnu \
 		#gcc-mipsisa32r6el-linux-gnu binutils-mipsisa32r6el-linux-gnu \
 		#gcc-mipsisa64r6-linux-gnuabi64 binutils-mipsisa64r6-linux-gnuabi64 \
 		#gcc-mipsisa64r6el-linux-gnuabi64 binutils-mipsisa64r6el-linux-gnuabi64 \
-		gcc--linux-gnuabi64 binutils-mips64el-linux-gnuabi64 \
-		dosbox wine32 wine64 qemu-system qemu-user
+		#gcc-linux-gnuabi64 binutils-mips64el-linux-gnuabi64 \
 fi
 
 #### Build newest cc65 compiler for C64 etc from source

@@ -11,6 +11,9 @@ function pause(){
         read -p "$*"
 }
 
+#"Build Linux-mips" "Build Linux-mipsel" "Build Linux-mips64" "Build Linux-mips64el" \
+
+
 echo "$NAMESPACE: Build or run with dosbox/wine/qemu"
 echo
 PS3='Please enter your choice: '
@@ -20,7 +23,7 @@ options=("List filetypes of built executeables" "Build All" "Build AmigaOS3" \
 "Build CommodorePET40columns" "Build CommodorePET80columns" \
 "Build Plus4" "Build Linux-x32" \
 "Build Linux-x64" "Build Linux-arm32" "Build Linux-arm64" \
-"Build Linux-mips" "Build Linux-mipsel" "Build Linux-mips64" "Build Linux-mips64el" \
+"Build Linux-mips64" \
 "Build Linux-m68k" "Build Linux-ppc" \
 "Build Linux-ppc64" "Build Linux-ppc64le" "Build Linux-riscv64" "Build Linux-s390x" \
 "Run DOS" "Run Win32" "Run Win64" "Run Linux-x32" "Run Linux-x64" \
@@ -87,18 +90,18 @@ do
       mkdir -p build/Linux-m68k
       echo m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
       m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
-      mkdir -p build/Linux-mips
-      echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
-      mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
-      mkdir -p build/Linux-mipsel
-      echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
-      mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+      #mkdir -p build/Linux-mips
+      #echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+      #mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+      #mkdir -p build/Linux-mipsel
+      #echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+      #mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
       mkdir -p build/Linux-mips64
       echo mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
       mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
-      mkdir -p build/Linux-mips64el
-      echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
-      mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      #mkdir -p build/Linux-mips64el
+      #echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      #mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
       mkdir -p build/Linux-ppc
       echo powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
       powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
@@ -222,20 +225,20 @@ do
       m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
       break
       ;;
-    "Build Linux-mips")
-      ./deps.sh
-      mkdir -p build/Linux-mips
-      echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
-      mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
-      break
-      ;;
-    "Build Linux-mipsel")
-      ./deps.sh
-      mkdir -p build/Linux-mipsel
-      echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
-      mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
-      break
-      ;;
+#    "Build Linux-mips")
+#      ./deps.sh
+#      mkdir -p build/Linux-mips
+#      echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+#      mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+#      break
+#      ;;
+#    "Build Linux-mipsel")
+#      ./deps.sh
+#      mkdir -p build/Linux-mipsel
+#      echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+#      mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+#      break
+#      ;;
     "Build Linux-mips64")
       ./deps.sh
       mkdir -p build/Linux-mips64
@@ -243,13 +246,13 @@ do
       mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
       break
       ;;
-    "Build Linux-mips64el")
-      ./deps.sh
-      mkdir -p build/Linux-mips64el
-      echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
-      mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
-      break
-      ;;
+#    "Build Linux-mips64el")
+#      ./deps.sh
+#      mkdir -p build/Linux-mips64el
+#      echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+#      mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+#      break
+#      ;;
     "Build Linux-ppc")
       ./deps.sh
       mkdir -p build/Linux-ppc
@@ -331,26 +334,26 @@ do
       qemu-m68k build/Linux-m68k/$NAMEMINUS
       break
       ;;
-   "Run Linux-mips")
-      echo "qemu-mips build/Linux-mips/$NAMEMINUS"
-      qemu-mips build/Linux-mips/$NAMEMINUS
-      break
-      ;;
-   "Run Linux-mipsel")
-      echo "qemu-mipsel build/Linux-mipsel/$NAMEMINUS"
-      qemu-mipsel build/Linux-mipsel/$NAMEMINUS
-      break
-      ;;
+#   "Run Linux-mips")
+#      echo "qemu-mips build/Linux-mips/$NAMEMINUS"
+#      qemu-mips build/Linux-mips/$NAMEMINUS
+#      break
+#      ;;
+#   "Run Linux-mipsel")
+#      echo "qemu-mipsel build/Linux-mipsel/$NAMEMINUS"
+#      qemu-mipsel build/Linux-mipsel/$NAMEMINUS
+#      break
+#      ;;
    "Run Linux-mips64")
       echo "qemu-mips64 build/Linux-mips64/$NAMEMINUS"
       qemu-mips64 build/Linux-mips64/$NAMEMINUS
       break
       ;;
-   "Run Linux-mips64el")
-      echo "qemu-mips64el build/Linux-mips64el/$NAMEMINUS"
-      qemu-mips64el build/Linux-mips64el/$NAMEMINUS
-      break
-      ;;
+#   "Run Linux-mips64el")
+#      echo "qemu-mips64el build/Linux-mips64el/$NAMEMINUS"
+#      qemu-mips64el build/Linux-mips64el/$NAMEMINUS
+#      break
+#      ;;
     "Run Linux-ppc")
       echo "qemu-ppc build/Linux-ppc/$NAMEMINUS"
       qemu-ppc build/Linux-ppc/$NAMEMINUS
