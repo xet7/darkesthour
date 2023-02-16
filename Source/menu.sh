@@ -21,7 +21,7 @@ options=("List filetypes of built executeables" "Build All" "Build AmigaOS3" \
 "Build AppleII" "Build CBM-II" "Build C64" \
 "Build DOS" "Build Win32" "Build Win64" "Build Plus4" \
 "Build CommodorePET40columns" "Build CommodorePET80columns" \
-"Build Plus4" "Build Linux-x32" \
+"Build Plus4" "Build NetBSD" "Build OpenBSD" "Build Haiku" "Build Linux-x32" \
 "Build Linux-x64" "Build Linux-arm32" "Build Linux-arm64" \
 "Build Linux-mips64" \
 "Build Linux-m68k" "Build Linux-ppc" \
@@ -45,6 +45,7 @@ do
       ;;
    "Build All")
       ./deps.sh
+      mkdir -p build/NetBSD build/OpenBSD build/Haiku
       mkdir -p build/AmigaOS3
       echo m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
@@ -168,7 +169,6 @@ do
       ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
       break
       ;;
-
     "Build Win32")
       ./deps.sh
       mkdir -p build/Win32
@@ -188,6 +188,26 @@ do
       mkdir -p build/Plus4
       echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
       ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
+      break
+      ;;
+    "Build NetBSD")
+      mkdir -p build/NetBSD
+      echo "Build for NetBSD at NetBSD:"
+      echo gcc $NAMEMINUS.c -o build/NetBSD/$NAMEMINUS -Wall -static
+      gcc $NAMEMINUS.c -o build/NetBSD/$NAMEMINUS -Wall -static
+      break
+      ;;
+    "Build OpenBSD")
+      mkdir -p build/OpenBSD
+      echo Build for OpenBSD at OpenBSD:
+      echo egcc $NAMEMINUS.c -o build/OpenBSD/$NAMEMINUS -Wall -static
+      egcc $NAMEMINUS.c -o build/OpenBSD/$NAMEMINUS -Wall -static
+      break
+      ;;
+    "Build Haiku")
+      echo Build for Haiku at Haiku:
+      echo gcc $NAMEMINUS.c -o build/Haiku/$NAMEMINUS -Wall -static
+      gcc $NAMEMINUS.c -o build/Haiku/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-x32")
