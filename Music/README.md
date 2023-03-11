@@ -11,5 +11,5 @@ and did give xet7 permission to add this music to this repo.
 
 ## dark2.mid
 
-2023-03-11 ben sent this composed music, original filename: scary3.mid .
+2023-03-11 ben @i_right_i sent this composed music, original filename: scary3.mid .
 The midi is quite a bit different than the dark1.mp3, but still kinda has the creepy vibe.
