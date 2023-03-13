@@ -1,5 +1,7 @@
 # Darkest Hour
 
+<img src="https://raw.githubusercontent.com/xet7/darkesthour/main/Images/darkesthour-cover1.png" width="60%" alt="Darkest Hour cover image first draft" />
+
 ## Overview
 
 This is an old-fashioned text adventure game, hopefully the first of many.
