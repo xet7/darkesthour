@@ -144,7 +144,7 @@ This game is in the public domain (see [the Unlicense](http://www.unlicense.org)
 
 # Related
 
-## Modern C Cross-Platform
+### Modern C Cross-Platform
 
 https://www.raylib.com
 
@@ -156,17 +156,17 @@ https://github.com/raysan5/raylib
 
 https://github.com/raysan5/raygui
 
-## Retro Pascal Cross-Platform
+### Retro Pascal Cross-Platform
 
 https://lemonspawn.com/turbo-rascal-syntax-error-expected-but-begin/
 
-## Modern Pascal Cross-Platform 
+### Modern Pascal Cross-Platform 
 
 https://www.lazarus-ide.org
 
 https://www.freepascal.org
 
-## Transpilers
+### Transpilers
 
 https://haxe.org
 
