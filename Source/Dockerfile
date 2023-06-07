@@ -44,7 +44,7 @@ RUN \
     #fi
     #### Install Linux i386 to AmigaOS3 crosscompiler
     #if [ -L /usr/local/bin/68k-amigaos-gcc ] ; then
-    (cd /opt && sudo tar zxf /home/wekan/darkesthour/Source/archive/m68k-amigaos_linux_i386.tar.gz) && \
+    (cd /opt && tar zxf /home/wekan/darkesthour/Source/archive/m68k-amigaos_linux_i386.tar.gz) && \
     (cd /usr/local/bin && ln -s /opt/m68k-amigaos/bin/*m68k* . && ln -s /opt/m68k-amigaos/bin/v* .) && \
     (cd /usr/local/bin && ln -s /opt/m68k-amigaos/bin/v* .)
 
