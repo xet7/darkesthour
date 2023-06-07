@@ -7,8 +7,8 @@ RUN \
     set -o xtrace && \
     apt-get update && \
     useradd --user-group --system --home-dir /home/wekan wekan && \
-    apt-get -y install apt-utils libarchive-tools ca-certificates wget curl bzip2 g++ build-essential git software-properties-common gcc-multilib && \
-    dpkg --con
+    apt-get -y install apt-utils libarchive-tools ca-certificates wget curl bzip2 python3 g++ build-essential git software-properties-common gcc-multilib && \
+    dpkg --configure -a && \
     add-apt-repository -y ppa:tkchia/build-ia16 && \
     apt-get update && \
     apt-get -y install gcc-ia16-elf build-essential mingw-w64 p7zip-full \
