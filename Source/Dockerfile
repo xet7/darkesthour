@@ -7,7 +7,7 @@ RUN \
     set -o xtrace && \
     apt-get update && \
     useradd --user-group --system --home-dir /home/wekan wekan && \
-    apt-get -y install apt-utils libarchive-tools ca-certificates wget curl bzip2 g++ build-essential git python3 software-properties-common && \
+    apt-get -y install apt-utils libarchive-tools ca-certificates wget curl bzip2 g++ build-essential git python3 software-properties-common gcc-multilib && \
     add-apt-repository -y ppa:tkchia/build-ia16 && \
     apt-get update && \
     apt-get -y install gcc-ia16-elf build-essential mingw-w64 p7zip-full \
@@ -22,6 +22,7 @@ RUN \
     gcc-mips64-linux-gnuabi64 binutils-mips64-linux-gnuabi64 \
     dosbox wine64 qemu-system qemu-user && \
     mkdir -p /home/wekan && \
+    (cd /home/wekan && git clone --branch main --depth 1 https://github.com/xet7/darkesthour && cd darkesthour/Source/archive && git clone --branch master --depth 1 https://github.com/cc65/cc65 && cd cc65 && make) && \
     chown wekan --recursive /home/wekan && \
     # 2>&1 | tee log.txt
     #gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \   ## Running causes core dump
@@ -36,7 +37,6 @@ RUN \
     #
     #### Build newest cc65 compiler for C64 etc from source
     #if [ ! -d archive/cc65 ] ; then
-    (cd archive && git clone https://github.com/cc65/cc65 && cd cc65 && make) && \
     #fi
     #### If using old cc65 version:
     #if [ ! -d archive/cc65 ] ; then
@@ -44,12 +44,9 @@ RUN \
     #fi
     #### Install Linux i386 to AmigaOS3 crosscompiler
     #if [ -L /usr/local/bin/68k-amigaos-gcc ] ; then
-    (sudo apt-get -y install gcc-multilib) && \
-    (sudo cp archive/m68k-amigaos_linux_i386.tar.gz /tmp/) && \
-    (cd /opt && sudo tar zxf /tmp/m68k-amigaos_linux_i386.tar.gz) && \
-    (cd /usr/local/bin && sudo ln -s /opt/m68k-amigaos/bin/*m68k* . && sudo ln -s /opt/m68k-amigaos/bin/v* .) && \
-    (cd /usr/local/bin && sudo ln -s /opt/m68k-amigaos/bin/v* .) && \
-    (sudo rm /tmp/m68k-amigaos_linux_i386.tar.gz)
+    (cd /opt && sudo tar zxf /home/wekan/darkesthour/Source/archive/m68k-amigaos_linux_i386.tar.gz) && \
+    (cd /usr/local/bin && ln -s /opt/m68k-amigaos/bin/*m68k* . && ln -s /opt/m68k-amigaos/bin/v* .) && \
+    (cd /usr/local/bin && ln -s /opt/m68k-amigaos/bin/v* .)
 
 USER wekan
 
