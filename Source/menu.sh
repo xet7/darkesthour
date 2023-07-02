@@ -17,7 +17,8 @@ function pause(){
 echo "$NAMESPACE: Build or run with dosbox/wine/qemu"
 echo
 PS3='Please enter your choice: '
-options=("List filetypes of built executeables" "Build All" "Build AmigaOS3" \
+options=("List filetypes of built executeables" "Build All" \
+"Build Cosmopolitan" "Build AmigaOS3" \
 "Build AppleII" "Build CBM-II" "Build C64" \
 "Build DOS" "Build Win32" "Build Win64" "Build Plus4" \
 "Build CommodorePET40columns" "Build CommodorePET80columns" \
@@ -26,7 +27,7 @@ options=("List filetypes of built executeables" "Build All" "Build AmigaOS3" \
 "Build Linux-mips64" \
 "Build Linux-m68k" "Build Linux-ppc" \
 "Build Linux-ppc64" "Build Linux-ppc64le" "Build Linux-riscv64" "Build Linux-s390x" \
-"Run DOS" "Run Win32" "Run Win64" "Run Linux-x32" "Run Linux-x64" \
+"Run Cosmopolitan" "Run DOS" "Run Win32" "Run Win64" "Run Linux-x32" "Run Linux-x64" \
 "Run Linux-arm32" "Run Linux-arm64" \
 "Run Linux-m68k" "Run Linux-mips" "Run Linux-mipsel" "Run Linux-mips64" "Run Linux-mips64el" \
 "Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" "Run Linux-riscv64" \
@@ -45,8 +46,11 @@ do
       ;;
    "Build All")
       ./deps.sh
-      mkdir -p build/NetBSD build/OpenBSD build/Haiku
-      mkdir -p build/AmigaOS3
+      mkdir -p build/Cosmopolitan build/NetBSD build/OpenBSD build/Haiku build/AmigaOS3
+      # $NAMEMINUS-cosmo.c had one line difference: below of #include <stdio.h> is
+      # added new line: #include <cosmo.h>
+      echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
+      cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       echo m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       mkdir -p build/AppleII
@@ -118,6 +122,15 @@ do
       mkdir -p build/Linux-s390x
       echo s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
       s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
+      break
+      ;;
+   "Build Cosmopolitan")
+      ./deps.sh
+      mkdir -p build/Cosmopolitan
+      # $NAMEMINUS-cosmo.c had one line difference: below of #include <stdio.h> is
+      # added new line: #include <cosmo.h>
+      echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
+      cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       break
       ;;
    "Build AmigaOS3")
@@ -314,6 +327,11 @@ do
       s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
       break
       ;;
+    "Run Cosmopolitan")
+     echo "./build/Cosmopolitan/$NAMEMINUS-cosmo.com"
+     ./build/Cosmopolitan/$NAMEMINUS-cosmo.com
+     break
+     ;;
     "Run DOS")
       echo "dosbox ./build/DOS/$NAMEDOS.EXE"
       dosbox ./build/DOS/$NAMEDOS.EXE

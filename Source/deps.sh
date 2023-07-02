@@ -46,3 +46,24 @@ if [ -L /usr/local/bin/68k-amigaos-gcc ] ; then
 	(cd /usr/local/bin && sudo ln -s /opt/m68k-amigaos/bin/v* .)
 	(sudo rm /tmp/m68k-amigaos_linux_i386.tar.gz)
 fi
+
+# Cosmopolitan
+
+if [ ! -d /opt/cosmo ] ; then
+	(sudo sh -c "echo ':APE:M::MZqFpD::/bin/sh:' >/proc/sys/fs/binfmt_misc/register" && \
+	sudo mkdir -p /opt && \
+	sudo chmod 1777 /opt && \
+	git clone https://github.com/jart/cosmopolitan /opt/cosmo && \
+	cd /opt/cosmo && \
+	make -j8 toolchain && \
+	ape/apeinstall.sh && \
+	mkdir -p /opt/cosmos/bin && \
+	export PATH="/opt/cosmos/bin:$PATH" && \
+	echo 'PATH="/opt/cosmos/bin:$PATH"' >>~/.profile && \
+	sudo ln -sf /opt/cosmo/tool/scripts/cosmocc /opt/cosmos/bin/cosmocc && \
+	sudo ln -sf /opt/cosmo/tool/scripts/cosmoc++ /opt/cosmos/bin/cosmoc++)
+fi
+
+
+
+
