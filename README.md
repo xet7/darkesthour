@@ -1,5 +1,7 @@
 # Darkest Hour
 
+<img src="https://raw.githubusercontent.com/xet7/darkesthour/main/Images/darkesthour-cover1.png" width="60%" alt="Darkest Hour cover image first draft" />
+
 ## Overview
 
 This is an old-fashioned text adventure game, hopefully the first of many.
@@ -139,3 +141,36 @@ CNCF/Linux Foundation, IBM LinuxOne Community Cloud, OpenPower MiniCloud and Mac
 # License
 
 This game is in the public domain (see [the Unlicense](http://www.unlicense.org) or the source code for the full legalese).
+
+# Related
+
+### Modern C Cross-Platform
+
+https://www.raylib.com
+
+https://www.raylib.com/examples.html
+
+https://www.raylib.com/games.html
+
+https://github.com/raysan5/raylib
+
+https://github.com/raysan5/raygui
+
+### Retro Pascal Cross-Platform
+
+https://lemonspawn.com/turbo-rascal-syntax-error-expected-but-begin/
+
+### Modern Pascal Cross-Platform 
+
+https://www.lazarus-ide.org
+
+https://www.freepascal.org
+
+### Transpilers
+
+https://haxe.org
+
+https://github.com/LingDong-/wax
+
+
+
