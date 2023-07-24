@@ -17,6 +17,8 @@ From @xet7
 ## Learn C
 
 - https://news.ycombinator.com/item?id=34105770
+- http://www.cs.cmu.edu/~tom7/abc/paper.pdf
+- https://news.ycombinator.com/item?id=36821985
 
 ## Reading and writing files
 
