@@ -110,28 +110,33 @@ Menu looks like this, there write number and press enter:
 ~/repos/darkesthour/Source$ ./menu.sh
 Darkest Hour: Build or run with dosbox/wine/qemu
 
- 1) List filetypes of built executeables  23) Build Linux-ppc64le
- 2) Build All				  24) Build Linux-riscv64
- 3) Build AmigaOS3			  25) Build Linux-s390x
- 4) Build AppleII			  26) Run DOS
- 5) Build CBM-II			  27) Run Win32
- 6) Build C64				  28) Run Win64
- 7) Build DOS				  29) Run Linux-x32
- 8) Build Plus4				  30) Run Linux-x64
- 9) Build CommodorePET40columns		  31) Run Linux-arm32
-10) Build CommodorePET80columns		  32) Run Linux-arm64
-11) Build Plus4				  33) Run Linux-m68k
-12) Build Linux-x32			  34) Run Linux-mips
-13) Build Linux-x64			  35) Run Linux-mipsel
-14) Build Linux-arm32			  36) Run Linux-mips64
-15) Build Linux-arm64			  37) Run Linux-mips64el
-16) Build Linux-mips			  38) Run Linux-ppc
-17) Build Linux-mipsel			  39) Run Linux-ppc64
-18) Build Linux-mips64			  40) Run Linux-ppc64le
-19) Build Linux-mips64el		  41) Run Linux-riscv64
-20) Build Linux-m68k			  42) Run Linux-s390x
-21) Build Linux-ppc			  43) Quit
-22) Build Linux-ppc64
+ 1) List filetypes of built executeables  28) Build Linux-mips64
+ 2) Build All				  29) Build Linux-mips64el
+ 3) Build Cosmopolitan			  30) Build Linux-mipsisa32r6
+ 4) Build AmigaOS3			  31) Build Linux-mipsisa32r6el
+ 5) Build AppleII			  32) Build Linux-riscv64
+ 6) Build CBM-II			  33) Build Linux-s390x
+ 7) Build C64				  34) Build Linux-sparc64
+ 8) Build DOS				  35) Run Cosmopolitan
+ 9) Build Win32				  36) Run DOS
+10) Build Win64				  37) Run Win32
+11) Build Plus4				  38) Run Win64
+12) Build CommodorePET40columns		  39) Run Linux-x32
+13) Build CommodorePET80columns		  40) Run Linux-x64
+14) Build Plus4				  41) Run Linux-arm32
+15) Build NetBSD			  42) Run Linux-arm64
+16) Build OpenBSD			  43) Run Linux-m68k
+17) Build Haiku				  44) Run Linux-mips
+18) Build Linux-x32			  45) Run Linux-mipsel
+19) Build Linux-x64			  46) Run Linux-mips64
+20) Build Linux-arm32			  47) Run Linux-mips64el
+21) Build Linux-arm64			  48) Run Linux-ppc
+22) Build Linux-m68k			  49) Run Linux-ppc64
+23) Build Linux-ppc			  50) Run Linux-ppc64le
+24) Build Linux-ppc64			  51) Run Linux-riscv64
+25) Build Linux-ppc64le			  52) Run Linux-s390x
+26) Build Linux-mips			  53) Run Linux-sparc64
+27) Build Linux-mipsel			  54) Quit
 Please enter your choice:
 ```
 
