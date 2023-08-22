@@ -109,7 +109,8 @@ Menu looks like this, there write number and press enter:
 ```
 ~/repos/darkesthour/Source$ ./menu.sh
 Darkest Hour: Build or run with dosbox/wine/qemu
-
+Cosmopolitan works at amd64 Windows/Linux/Mac/NetBSD/OpenBSD.
+Not crosscompiling yet for AROS/Haiku, compiled at those OS.
  1) List filetypes of built executeables  28) Build Linux-mips64
  2) Build All				  29) Build Linux-mips64el
  3) Build Cosmopolitan			  30) Build Linux-mipsisa32r6
@@ -124,9 +125,9 @@ Darkest Hour: Build or run with dosbox/wine/qemu
 12) Build CommodorePET40columns		  39) Run Linux-x32
 13) Build CommodorePET80columns		  40) Run Linux-x64
 14) Build Plus4				  41) Run Linux-arm32
-15) Build NetBSD			  42) Run Linux-arm64
-16) Build OpenBSD			  43) Run Linux-m68k
-17) Build Haiku				  44) Run Linux-mips
+15) Build NetBSD-amd64			  42) Run Linux-arm64
+16) Build OpenBSD-amd64			  43) Run Linux-m68k
+17) Build Haiku-amd64			  44) Run Linux-mips
 18) Build Linux-x32			  45) Run Linux-mipsel
 19) Build Linux-x64			  46) Run Linux-mips64
 20) Build Linux-arm32			  47) Run Linux-mips64el

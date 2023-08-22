@@ -16,15 +16,18 @@ function pause(){
 #No qemu-user:  "Run Linux-mipsisa32r6" "Run Linux-mipsisa32r6el" \
 
 echo "$NAMESPACE: Build or run with dosbox/wine/qemu"
-echo
+echo "Cosmopolitan works at amd64 Windows/Linux/Mac/NetBSD/OpenBSD."
+echo "Not crosscompiling yet for AROS/Haiku, compiled at those OS."
+#echo
 PS3='Please enter your choice: '
 options=("List filetypes of built executeables" "Build All" \
 "Build Cosmopolitan" "Build AmigaOS3" \
 "Build AppleII" "Build CBM-II" "Build C64" \
 "Build DOS" "Build Win32" "Build Win64" "Build Plus4" \
 "Build CommodorePET40columns" "Build CommodorePET80columns" \
-"Build Plus4" "Build NetBSD" "Build OpenBSD" "Build Haiku" "Build Linux-x32" \
-"Build Linux-x64" "Build Linux-arm32" "Build Linux-arm64" "Build Linux-m68k" \
+"Build Plus4" "Build NetBSD-amd64" "Build OpenBSD-amd64" "Build Haiku-amd64" \
+"Build Linux-x32" "Build Linux-x64" \
+"Build Linux-arm32" "Build Linux-arm64" "Build Linux-m68k" \
 "Build Linux-ppc" "Build Linux-ppc64" "Build Linux-ppc64le" \
 "Build Linux-mips" "Build Linux-mipsel" "Build Linux-mips64" "Build Linux-mips64el" \
 "Build Linux-mipsisa32r6" "Build Linux-mipsisa32r6el" \
@@ -202,24 +205,25 @@ do
       ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
       break
       ;;
-    "Build NetBSD")
-      mkdir -p build/NetBSD
-      echo "Build for NetBSD at NetBSD:"
+    "Build NetBSD-amd64")
+      mkdir -p build/NetBSD-amd64
+      echo "Build for NetBSD-amd64 at NetBSD-amd64:"
       echo gcc $NAMEMINUS.c -o build/NetBSD/$NAMEMINUS -Wall -static
       gcc $NAMEMINUS.c -o build/NetBSD/$NAMEMINUS -Wall -static
       break
       ;;
-    "Build OpenBSD")
-      mkdir -p build/OpenBSD
-      echo Build for OpenBSD at OpenBSD:
-      echo egcc $NAMEMINUS.c -o build/OpenBSD/$NAMEMINUS -Wall -static
-      egcc $NAMEMINUS.c -o build/OpenBSD/$NAMEMINUS -Wall -static
+    "Build OpenBSD-amd64")
+      mkdir -p build/OpenBSD-amd64
+      echo "Build for OpenBSD-amd64 at OpenBSD-amd64:"
+      echo egcc $NAMEMINUS.c -o build/OpenBSD-amd64/$NAMEMINUS -Wall -static
+      egcc $NAMEMINUS.c -o build/OpenBSD-amd64/$NAMEMINUS -Wall -static
       break
       ;;
-    "Build Haiku")
-      echo Build for Haiku at Haiku:
-      echo gcc $NAMEMINUS.c -o build/Haiku/$NAMEMINUS -Wall -static
-      gcc $NAMEMINUS.c -o build/Haiku/$NAMEMINUS -Wall -static
+    "Build Haiku-amd64")
+      mkdir -p build/Haiku-amd64
+      echo "Build for Haiku-amd64 at Haiku-amd64:"
+      echo gcc $NAMEMINUS.c -o build/Haiku-amd64/$NAMEMINUS -Wall -static
+      gcc $NAMEMINUS.c -o build/Haiku-amd64/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-x32")
