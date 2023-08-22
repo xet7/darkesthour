@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #### If crosscompilers and emulators do not exist, add them
-if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
+#if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 	sudo apt-get update
         sudo apt-get -y install software-properties-common
 	sudo add-apt-repository -y ppa:tkchia/build-ia16
@@ -15,18 +15,21 @@ if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 		gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu \
 		gcc-m68k-linux-gnu binutils-m68k-linux-gnu \
 		gcc-mips64-linux-gnuabi64 binutils-mips64-linux-gnuabi64 \
-		dosbox wine64 qemu-system qemu-user 2>&1 | tee log.txt
+		dosbox wine64 qemu-system qemu-user \
+		gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \
+		gcc-mips-linux-gnu binutils-mips-linux-gnu \
+		gcc-mipsel-linux-gnu binutils-mipsel-linux-gnu \
+		gcc-mips64el-linux-gnuabi64 binutils-mips64el-linux-gnuabi64 \
+		gcc-mipsisa32r6-linux-gnu binutils-mipsisa32r6-linux-gnu \
+		gcc-mipsisa32r6el-linux-gnu binutils-mipsisa32r6el-linux-gnu \
+		gcc-mipsisa64r6-linux-gnuabi64 binutils-mipsisa64r6-linux-gnuabi64 \
+		gcc-mipsisa64r6el-linux-gnuabi64 binutils-mipsisa64r6el-linux-gnuabi64 \
+		2>&1 | tee ../../darkest-hour-install-deps-log.txt
 
-		#gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \   ## Running causes core dump
-		#gcc-mips-linux-gnu binutils-mips-linux-gnu \
-		#gcc-mipsel-linux-gnu binutils-mipsel-linux-gnu \
-		#gcc-mips64el-linux-gnuabi64 binutils-mips64el-linux-gnuabi64 \
-		#gcc-mipsisa32r6-linux-gnu binutils-mipsisa32r6-linux-gnu \
-		#gcc-mipsisa32r6el-linux-gnu binutils-mipsisa32r6el-linux-gnu \
-		#gcc-mipsisa64r6-linux-gnuabi64 binutils-mipsisa64r6-linux-gnuabi64 \
-		#gcc-mipsisa64r6el-linux-gnuabi64 binutils-mipsisa64r6el-linux-gnuabi64 \
-		#gcc-linux-gnuabi64 binutils-mips64el-linux-gnuabi64 \
-fi
+#		gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \   ## Running causes core dump
+
+
+#fi
 
 #### Build newest cc65 compiler for C64 etc from source
 if [ ! -d archive/cc65 ] ; then
@@ -64,7 +67,3 @@ if [ ! -d /opt/cosmo ] ; then
 	sudo ln -sf /opt/cosmo/tool/scripts/cosmocc /opt/cosmos/bin/cosmocc && \
 	sudo ln -sf /opt/cosmo/tool/scripts/cosmoc++ /opt/cosmos/bin/cosmoc++)
 fi
-
-
-
-

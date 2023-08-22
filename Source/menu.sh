@@ -45,8 +45,7 @@ do
       break
       ;;
    "Build All")
-      ./deps.sh
-      mkdir -p build/Cosmopolitan build/NetBSD build/OpenBSD build/Haiku build/AmigaOS3
+      #mkdir -p build/Cosmopolitan build/NetBSD build/OpenBSD build/Haiku build/AmigaOS3
       # $NAMEMINUS-cosmo.c had one line difference: below of #include <stdio.h> is
       # added new line: #include <cosmo.h>
       echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
@@ -95,18 +94,18 @@ do
       mkdir -p build/Linux-m68k
       echo m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
       m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
-      #mkdir -p build/Linux-mips
-      #echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
-      #mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
-      #mkdir -p build/Linux-mipsel
-      #echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
-      #mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mips
+      echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+      mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mipsel
+      echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+      mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
       mkdir -p build/Linux-mips64
       echo mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
       mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
-      #mkdir -p build/Linux-mips64el
-      #echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
-      #mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mips64el
+      echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
       mkdir -p build/Linux-ppc
       echo powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
       powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
@@ -122,10 +121,18 @@ do
       mkdir -p build/Linux-s390x
       echo s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
       s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-sparc64
+      echo sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
+      sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mipsisa32r6
+      echo mipsisa32r6-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6/$NAMEMINUS -Wall -static
+      mipsisa32r6-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mipsisa32r6el
+      echo mipsisa32r6el-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6el/$NAMEMINUS -Wall -static
+      mipsisa32r6el-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6el/$NAMEMINUS -Wall -static
       break
       ;;
    "Build Cosmopolitan")
-      ./deps.sh
       mkdir -p build/Cosmopolitan
       # $NAMEMINUS-cosmo.c had one line difference: below of #include <stdio.h> is
       # added new line: #include <cosmo.h>
@@ -134,70 +141,60 @@ do
       break
       ;;
    "Build AmigaOS3")
-      ./deps.sh
       mkdir -p build/AmigaOS3
       echo m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       break
       ;;
    "Build AppleII")
-      ./deps.sh
       mkdir -p build/AppleII
       echo ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
       ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
       break
       ;;
    "Build C64")
-      ./deps.sh
       mkdir -p build/C64
       echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
       ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
       break
       ;;
     "Build CBM-II")
-      ./deps.sh
       mkdir -p build/CBM-II
       echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
       ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
       break
       ;;
     "Build CommodorePET40columns")
-      ./deps.sh
       mkdir -p build/CommodorePET40columns
       echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
       ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
       break
       ;;
     "Build CommodorePET80columns")
-      ./deps.sh
       mkdir -p build/CommodorePET80columns
       echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
       ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
       break
       ;;
     "Build DOS")
-      ./deps.sh
       mkdir -p build/DOS
       echo ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
       ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
       break
       ;;
     "Build Win32")
-      ./deps.sh
       mkdir -p build/Win32
       echo i686-w64-mingw32-gcc -o ./build/Win32/$NAMEMINUS-win32.exe ./$NAMEMINUS.c
       i686-w64-mingw32-gcc -o ./build/Win32/$NAMEMINUS-win32.exe ./$NAMEMINUS.c
       break
       ;;
     "Build Win64")
-      ./deps.sh
       mkdir -p build/Win64
       echo x86_64-w64-mingw32-gcc -o ./build/Win64/$NAMEMINUS-win64.exe ./$NAMEMINUS.c
       x86_64-w64-mingw32-gcc -o ./build/Win64/$NAMEMINUS-win64.exe ./$NAMEMINUS.c
       break
       ;;
     "Build Plus4")
-      ./deps.sh
       mkdir -p build/Plus4
       echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
       ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
@@ -224,104 +221,101 @@ do
       break
       ;;
     "Build Linux-x32")
-      ./deps.sh
       mkdir -p build/Linux-x32
       echo gcc -m32 $NAMEMINUS.c -o build/Linux-x32/$NAMEMINUS -Wall -static
       gcc -m32 $NAMEMINUS.c -o build/Linux-x32/$NAMEMINUS -Wall -static
       break
       ;;
    "Build Linux-x64")
-      ./deps.sh
       mkdir -p build/Linux-x64
       echo gcc $NAMEMINUS.c -o build/Linux-x64/$NAMEMINUS -Wall -static
       gcc $NAMEMINUS.c -o build/Linux-x64/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-arm32")
-      ./deps.sh
       mkdir -p build/Linux-arm32
       echo arm-linux-gnueabi-gcc $NAMEMINUS.c -o build/Linux-arm32/$NAMEMINUS -Wall -static
       arm-linux-gnueabi-gcc $NAMEMINUS.c -o build/Linux-arm32/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-arm64")
-      ./deps.sh
       mkdir -p build/Linux-arm64
       echo aarch64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-arm64/$NAMEMINUS -Wall -static
       aarch64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-arm64/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-m68k")
-      ./deps.sh
       mkdir -p build/Linux-m68k
       echo m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
       m68k-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-m68k/$NAMEMINUS -Wall -static
       break
       ;;
-#    "Build Linux-mips")
-#      ./deps.sh
-#      mkdir -p build/Linux-mips
-#      echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
-#      mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
-#      break
-#      ;;
-#    "Build Linux-mipsel")
-#      ./deps.sh
-#      mkdir -p build/Linux-mipsel
-#      echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
-#      mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
-#      break
-#      ;;
+    "Build Linux-mips")
+      mkdir -p build/Linux-mips
+      echo mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+      mips-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mips/$NAMEMINUS -Wall -static
+      break
+      ;;
+    "Build Linux-mipsel")
+      mkdir -p build/Linux-mipsel
+      echo mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+      mipsel-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsel/$NAMEMINUS -Wall -static
+      break
+      ;;
     "Build Linux-mips64")
-      ./deps.sh
       mkdir -p build/Linux-mips64
       echo mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
       mips64-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64/$NAMEMINUS -Wall -static
       break
       ;;
-#    "Build Linux-mips64el")
-#      ./deps.sh
-#      mkdir -p build/Linux-mips64el
-#      echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
-#      mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
-#      break
-#      ;;
+    "Build Linux-mips64el")
+      mkdir -p build/Linux-mips64el
+      echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      break
+      ;;
+    "Build Linux-mipsisa32r6")
+      mkdir -p build/Linux-mipsisa32r6
+      echo mipsisa32r6-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6/$NAMEMINUS -Wall -static
+      mipsisa32r6-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6/$NAMEMINUS -Wall -static
+      break
+      ;;
+    "Build Linux-mipsisa32r6el")
+      mkdir -p build/Linux-mipsisa32r6el
+      echo mipsisa32r6el-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6el/$NAMEMINUS -Wall -static
+      mipsisa32r6el-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6el/$NAMEMINUS -Wall -static
+      break
+      ;;
     "Build Linux-ppc")
-      ./deps.sh
       mkdir -p build/Linux-ppc
       echo powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
       powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-ppc64")
-      ./deps.sh
       mkdir -p build/Linux-ppc64
       echo powerpc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64/$NAMEMINUS -Wall -static
       powerpc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-ppc64le")
-      ./deps.sh
       mkdir -p build/Linux-ppc64le
       echo powerpc64le-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc64le/$NAMEMINUS -Wall -static
       break
       ;;
     "Build Linux-riscv64")
-      ./deps.sh
       mkdir -p build/Linux-riscv64
       echo riscv64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-riscv64/$NAMEMINUS -Wall -static
       riscv64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-riscv64/$NAMEMINUS -Wall -static
       break
       ;;
-#    "Build Linux-sparc64")
-#      ./deps.sh
-#      mkdir -p build/Linux-sparc64
-#      echo sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
-#      sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
-#      break
-#      ;;
+    "Build Linux-sparc64")
+      mkdir -p build/Linux-sparc64
+      echo sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
+      sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
+      break
+      ;;
     "Build Linux-s390x")
-      ./deps.sh
       mkdir -p build/Linux-s390x
       echo s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static
       s390x-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-s390x/$NAMEMINUS -Wall -static

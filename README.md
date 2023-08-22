@@ -101,6 +101,8 @@ git clone https://github.com/xet7/darkesthour
 
 cd darkesthour/Source
 
+./deps.sh
+
 ./menu.sh
 ```
 Menu looks like this, there write number and press enter:
