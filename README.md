@@ -108,36 +108,39 @@ cd darkesthour/Source
 Menu looks like this, there write number and press enter:
 ```
 ~/repos/darkesthour/Source$ ./menu.sh
-Darkest Hour: Build or run with dosbox/wine/qemu
-Cosmopolitan works at amd64 Windows/Linux/Mac/NetBSD/OpenBSD.
-Not crosscompiling yet for AROS/Haiku, compiled at those OS.
- 1) List filetypes of built executeables  28) Build Linux-mips64
- 2) Build All				  29) Build Linux-mips64el
- 3) Build Cosmopolitan			  30) Build Linux-mipsisa32r6
- 4) Build AmigaOS3			  31) Build Linux-mipsisa32r6el
- 5) Build AppleII			  32) Build Linux-riscv64
- 6) Build CBM-II			  33) Build Linux-s390x
- 7) Build C64				  34) Build Linux-sparc64
- 8) Build DOS				  35) Run Cosmopolitan
- 9) Build Win32				  36) Run DOS
-10) Build Win64				  37) Run Win32
-11) Build Plus4				  38) Run Win64
-12) Build CommodorePET40columns		  39) Run Linux-x32
-13) Build CommodorePET80columns		  40) Run Linux-x64
-14) Build Plus4				  41) Run Linux-arm32
-15) Build NetBSD-amd64			  42) Run Linux-arm64
-16) Build OpenBSD-amd64			  43) Run Linux-m68k
-17) Build Haiku-amd64			  44) Run Linux-mips
-18) Build Linux-x32			  45) Run Linux-mipsel
-19) Build Linux-x64			  46) Run Linux-mips64
-20) Build Linux-arm32			  47) Run Linux-mips64el
-21) Build Linux-arm64			  48) Run Linux-ppc
-22) Build Linux-m68k			  49) Run Linux-ppc64
-23) Build Linux-ppc			  50) Run Linux-ppc64le
-24) Build Linux-ppc64			  51) Run Linux-riscv64
-25) Build Linux-ppc64le			  52) Run Linux-s390x
-26) Build Linux-mips			  53) Run Linux-sparc64
-27) Build Linux-mipsel			  54) Quit
+Edit settings.sh to change filenames.
+Darkest Hour: Build/Crosscompile/Run with DosBox/Wine/Qemu.
+Cosmopolitan Build at Linux, Run at amd64 Windows/Linux/Mac/NetBSD/OpenBSD.
+at: Only Build/Run at those OS, no crosscompiling those yet.
+ 1) List filetypes of built executeables  30) Build Linux-s390x
+ 2) Build All				  31) Build Linux-sparc64
+ 3) Build Cosmopolitan			  32) Run Cosmopolitan
+ 4) Build AmigaOS3			  33) Run DOS
+ 5) Build AppleII			  34) Run Win32
+ 6) Build CBM-II			  35) Run Win64
+ 7) Build C64				  36) Run Linux-x32
+ 8) Build DOS				  37) Run Linux-x64
+ 9) Build Win32				  38) Run Linux-arm32
+10) Build Win64				  39) Run Linux-arm64
+11) Build Plus4				  40) Run Linux-m68k
+12) Build CommodorePET40columns		  41) Run Linux-mips
+13) Build CommodorePET80columns		  42) Run Linux-mipsel
+14) Build Plus4				  43) Run Linux-mips64
+15) Build Linux-x32			  44) Run Linux-mips64el
+16) Build Linux-x64			  45) Run Linux-ppc
+17) Build Linux-arm32			  46) Run Linux-ppc64
+18) Build Linux-arm64			  47) Run Linux-ppc64le
+19) Build Linux-m68k			  48) Run Linux-riscv64
+20) Build Linux-ppc			  49) Run Linux-s390x
+21) Build Linux-ppc64			  50) Run Linux-sparc64
+22) Build Linux-ppc64le			  51) Build at NetBSD-amd64
+23) Build Linux-mips			  52) Build at OpenBSD-amd64
+24) Build Linux-mipsel			  53) Build at Haiku-amd64
+25) Build Linux-mips64			  54) Run at NetBSD-amd64
+26) Build Linux-mips64el		  55) Run at OpenBSD-amd64
+27) Build Linux-mipsisa32r6		  56) Run at Haiku-amd64
+28) Build Linux-mipsisa32r6el		  57) Quit
+29) Build Linux-riscv64
 Please enter your choice:
 ```
 

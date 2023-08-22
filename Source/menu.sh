@@ -15,9 +15,10 @@ function pause(){
 
 #No qemu-user:  "Run Linux-mipsisa32r6" "Run Linux-mipsisa32r6el" \
 
-echo "$NAMESPACE: Build or run with dosbox/wine/qemu"
-echo "Cosmopolitan works at amd64 Windows/Linux/Mac/NetBSD/OpenBSD."
-echo "Not crosscompiling yet for AROS/Haiku, compiled at those OS."
+echo "Edit settings.sh to change filenames."
+echo "$NAMESPACE: Build/Crosscompile/Run with DosBox/Wine/Qemu."
+echo "Cosmopolitan Build at Linux, Run at amd64 Windows/Linux/Mac/NetBSD/OpenBSD."
+echo "at: Only Build/Run at those OS, no crosscompiling those yet."
 #echo
 PS3='Please enter your choice: '
 options=("List filetypes of built executeables" "Build All" \
@@ -25,8 +26,7 @@ options=("List filetypes of built executeables" "Build All" \
 "Build AppleII" "Build CBM-II" "Build C64" \
 "Build DOS" "Build Win32" "Build Win64" "Build Plus4" \
 "Build CommodorePET40columns" "Build CommodorePET80columns" \
-"Build Plus4" "Build NetBSD-amd64" "Build OpenBSD-amd64" "Build Haiku-amd64" \
-"Build Linux-x32" "Build Linux-x64" \
+"Build Plus4" "Build Linux-x32" "Build Linux-x64" \
 "Build Linux-arm32" "Build Linux-arm64" "Build Linux-m68k" \
 "Build Linux-ppc" "Build Linux-ppc64" "Build Linux-ppc64le" \
 "Build Linux-mips" "Build Linux-mipsel" "Build Linux-mips64" "Build Linux-mips64el" \
@@ -36,7 +36,9 @@ options=("List filetypes of built executeables" "Build All" \
 "Run Linux-arm32" "Run Linux-arm64" "Run Linux-m68k" \
 "Run Linux-mips" "Run Linux-mipsel" "Run Linux-mips64" "Run Linux-mips64el" \
 "Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" \
-"Run Linux-riscv64" "Run Linux-s390x" "Run Linux-sparc64" "Quit")
+"Run Linux-riscv64" "Run Linux-s390x" "Run Linux-sparc64" \
+"Build at NetBSD-amd64" "Build at OpenBSD-amd64" "Build at Haiku-amd64" \
+"Run at NetBSD-amd64" "Run at OpenBSD-amd64" "Run at Haiku-amd64" "Quit")
 
 ## Not working:
 ## "Build Linux-sparc64" builds but "Run Linux-sparc64" gives core dump
@@ -345,6 +347,21 @@ do
     "Run Win64")
       echo "wine ./build/Win64/$NAMEMINUS-win64.exe"
       wine ./build/Win64/$NAMEMINUS-win64.exe
+      break
+      ;;
+    "Run NetBSD-amd64")
+      echo "At NetBSD-amd64: ./build/NetBSD-amd64/$NAMEMINUS"
+      ./build/NetBSD-amd64/$NAMEMINUS
+      break
+      ;;
+    "Run OpenBSD-amd64")
+      echo "At OpenBSD-amd64: ./build/OpenBSD-amd64/$NAMEMINUS"
+      ./build/OpenBSD-amd64/$NAMEMINUS
+      break
+      ;;
+    "Run Haiku-amd64")
+      echo "At Haiku-amd64: ./build/Haiku-amd64/$NAMEMINUS"
+      ./build/Haiku-amd64/$NAMEMINUS
       break
       ;;
     "Run Linux-x32")
