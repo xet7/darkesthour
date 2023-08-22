@@ -24,7 +24,7 @@
 		gcc-mipsisa32r6el-linux-gnu binutils-mipsisa32r6el-linux-gnu \
 		gcc-mipsisa64r6-linux-gnuabi64 binutils-mipsisa64r6-linux-gnuabi64 \
 		gcc-mipsisa64r6el-linux-gnuabi64 binutils-mipsisa64r6el-linux-gnuabi64 \
-		2>&1 | tee ../../darkest-hour-install-deps-log.txt
+		tree 2>&1 | tee ../../darkest-hour-install-deps-log.txt
 
 #		gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \   ## Running causes core dump
 
