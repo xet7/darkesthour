@@ -13,6 +13,7 @@ function pause(){
 
 #"Build Linux-mips" "Build Linux-mipsel" "Build Linux-mips64" "Build Linux-mips64el" \
 
+#No qemu-user:  "Run Linux-mipsisa32r6" "Run Linux-mipsisa32r6el" \
 
 echo "$NAMESPACE: Build or run with dosbox/wine/qemu"
 echo
@@ -23,15 +24,16 @@ options=("List filetypes of built executeables" "Build All" \
 "Build DOS" "Build Win32" "Build Win64" "Build Plus4" \
 "Build CommodorePET40columns" "Build CommodorePET80columns" \
 "Build Plus4" "Build NetBSD" "Build OpenBSD" "Build Haiku" "Build Linux-x32" \
-"Build Linux-x64" "Build Linux-arm32" "Build Linux-arm64" \
-"Build Linux-mips64" \
-"Build Linux-m68k" "Build Linux-ppc" \
-"Build Linux-ppc64" "Build Linux-ppc64le" "Build Linux-riscv64" "Build Linux-s390x" \
+"Build Linux-x64" "Build Linux-arm32" "Build Linux-arm64" "Build Linux-m68k" \
+"Build Linux-ppc" "Build Linux-ppc64" "Build Linux-ppc64le" \
+"Build Linux-mips" "Build Linux-mipsel" "Build Linux-mips64" "Build Linux-mips64el" \
+"Build Linux-mipsisa32r6" "Build Linux-mipsisa32r6el" \
+"Build Linux-riscv64" "Build Linux-s390x" "Build Linux-sparc64" \
 "Run Cosmopolitan" "Run DOS" "Run Win32" "Run Win64" "Run Linux-x32" "Run Linux-x64" \
-"Run Linux-arm32" "Run Linux-arm64" \
-"Run Linux-m68k" "Run Linux-mips" "Run Linux-mipsel" "Run Linux-mips64" "Run Linux-mips64el" \
-"Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" "Run Linux-riscv64" \
-"Run Linux-s390x" "Quit")
+"Run Linux-arm32" "Run Linux-arm64" "Run Linux-m68k" \
+"Run Linux-mips" "Run Linux-mipsel" "Run Linux-mips64" "Run Linux-mips64el" \
+"Run Linux-ppc" "Run Linux-ppc64" "Run Linux-ppc64le" \
+"Run Linux-riscv64" "Run Linux-s390x" "Run Linux-sparc64" "Quit")
 
 ## Not working:
 ## "Build Linux-sparc64" builds but "Run Linux-sparc64" gives core dump
@@ -106,6 +108,12 @@ do
       mkdir -p build/Linux-mips64el
       echo mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
       mips64el-linux-gnuabi64-gcc $NAMEMINUS.c -o build/Linux-mips64el/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mipsisa32r6
+      echo mipsisa32r6-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6/$NAMEMINUS -Wall -static
+      mipsisa32r6-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6/$NAMEMINUS -Wall -static
+      mkdir -p build/Linux-mipsisa32r6el
+      echo mipsisa32r6el-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6el/$NAMEMINUS -Wall -static
+      mipsisa32r6el-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6el/$NAMEMINUS -Wall -static
       mkdir -p build/Linux-ppc
       echo powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
       powerpc-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-ppc/$NAMEMINUS -Wall -static
@@ -124,12 +132,6 @@ do
       mkdir -p build/Linux-sparc64
       echo sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
       sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
-      mkdir -p build/Linux-mipsisa32r6
-      echo mipsisa32r6-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6/$NAMEMINUS -Wall -static
-      mipsisa32r6-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6/$NAMEMINUS -Wall -static
-      mkdir -p build/Linux-mipsisa32r6el
-      echo mipsisa32r6el-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6el/$NAMEMINUS -Wall -static
-      mipsisa32r6el-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-mipsisa32r6el/$NAMEMINUS -Wall -static
       break
       ;;
    "Build Cosmopolitan")
@@ -366,26 +368,31 @@ do
       qemu-m68k build/Linux-m68k/$NAMEMINUS
       break
       ;;
-#   "Run Linux-mips")
-#      echo "qemu-mips build/Linux-mips/$NAMEMINUS"
-#      qemu-mips build/Linux-mips/$NAMEMINUS
-#      break
-#      ;;
-#   "Run Linux-mipsel")
-#      echo "qemu-mipsel build/Linux-mipsel/$NAMEMINUS"
-#      qemu-mipsel build/Linux-mipsel/$NAMEMINUS
-#      break
-#      ;;
+   "Run Linux-mips")
+      echo "qemu-mips build/Linux-mips/$NAMEMINUS"
+      qemu-mips build/Linux-mips/$NAMEMINUS
+      break
+      ;;
+   "Run Linux-mipsel")
+      echo "qemu-mipsel build/Linux-mipsel/$NAMEMINUS"
+      qemu-mipsel build/Linux-mipsel/$NAMEMINUS
+      break
+      ;;
    "Run Linux-mips64")
       echo "qemu-mips64 build/Linux-mips64/$NAMEMINUS"
       qemu-mips64 build/Linux-mips64/$NAMEMINUS
       break
       ;;
-#   "Run Linux-mips64el")
-#      echo "qemu-mips64el build/Linux-mips64el/$NAMEMINUS"
-#      qemu-mips64el build/Linux-mips64el/$NAMEMINUS
-#      break
-#      ;;
+   "Run Linux-mips64el")
+      echo "qemu-mips64el build/Linux-mips64el/$NAMEMINUS"
+      qemu-mips64el build/Linux-mips64el/$NAMEMINUS
+      break
+      ;;
+   "Run Linux-mipsisa32r6")
+      echo "qemu-mipsisa32r6 build/Linux-mipsisa32r6/$NAMEMINUS"
+      qemu-mipsisa32r6 build/Linux-mipsisa32r6/$NAMEMINUS
+      break
+      ;;
     "Run Linux-ppc")
       echo "qemu-ppc build/Linux-ppc/$NAMEMINUS"
       qemu-ppc build/Linux-ppc/$NAMEMINUS
