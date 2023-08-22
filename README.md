@@ -146,6 +146,13 @@ Before setting up some of the above Linux crosscompilers at 2022-12-19, Linux bi
 were built on Linux servers donated to [Wekan Open Source kanban](https://wekan.github.io) project by
 CNCF/Linux Foundation, IBM LinuxOne Community Cloud, OpenPower MiniCloud and MacStadium.
 
+# Screenshots
+
+Darkest Hour running at NetBSD amd64
+with Cosmopolitan https://github.com/jart/cosmopolitan
+
+![netbsd1](./Screenshots/NetBSD-DarkestHour.png)
+
 # License
 
 This game is in the public domain (see [the Unlicense](http://www.unlicense.org) or the source code for the full legalese).
