@@ -19,6 +19,11 @@ From @xet7
 - https://news.ycombinator.com/item?id=34105770
 - http://www.cs.cmu.edu/~tom7/abc/paper.pdf
 - https://news.ycombinator.com/item?id=36821985
+- Modern C
+  - https://gustedt.gitlabpages.inria.fr/modern-c/
+  - https://news.ycombinator.com/item?id=36167820
+  - https://inria.hal.science/hal-02383654v1/preview/ModernC.pdf
+  - Code: https://inria.hal.science/hal-03345464v1/document
 
 ## Reading and writing files
 
