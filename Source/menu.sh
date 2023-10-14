@@ -55,6 +55,7 @@ do
       #mkdir -p build/Cosmopolitan build/NetBSD build/OpenBSD build/Haiku build/AmigaOS3
       # $NAMEMINUS-cosmo.c had one line difference: below of #include <stdio.h> is
       # added new line: #include <cosmo.h>
+      mkdir -p build/Cosmopolitan
       echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       echo m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
@@ -143,6 +144,7 @@ do
       mkdir -p build/Cosmopolitan
       # $NAMEMINUS-cosmo.c had one line difference: below of #include <stdio.h> is
       # added new line: #include <cosmo.h>
+      mkdir -p build/Cosmopolitan
       echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       break
