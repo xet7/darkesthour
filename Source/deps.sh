@@ -3,8 +3,9 @@
 #### If crosscompilers and emulators do not exist, add them
 #if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
 	sudo apt-get update
-        sudo apt-get -y install software-properties-common
+        sudo apt-get -y install software-properties-common python3-launchpadlib
 	sudo add-apt-repository -y ppa:tkchia/build-ia16
+	sudo sed -i 's|bookworm|lunar|g' /etc/apt/sources.list.d/tkchia-ubuntu-build-ia16-bookworm.list
 	sudo apt-get -y install gcc-ia16-elf build-essential mingw-w64 p7zip-full \
 		gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi \
 		gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu \
@@ -23,8 +24,9 @@
 		gcc-mipsisa32r6-linux-gnu binutils-mipsisa32r6-linux-gnu \
 		gcc-mipsisa32r6el-linux-gnu binutils-mipsisa32r6el-linux-gnu \
 		gcc-mipsisa64r6-linux-gnuabi64 binutils-mipsisa64r6-linux-gnuabi64 \
-		gcc-mipsisa64r6el-linux-gnuabi64 binutils-mipsisa64r6el-linux-gnuabi64 \
-		tree 2>&1 | tee ../../darkest-hour-install-deps-log.txt
+		gcc-mipsisa64r6el-linux-gnuabi64 binutils-mipsisa64r6el-linux-gnuabi64
+# \
+#		tree 2>&1 | tee ../../darkest-hour-install-deps-log.txt
 
 #		gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \   ## Running causes core dump
 
