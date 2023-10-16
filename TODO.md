@@ -4,8 +4,8 @@ From @xet7
 
 ## Changeable filename
 
-- Change everywhere that it's not hardcoded to filename "darkesthour" or "darkesthour.c",
-  but instead it's changeable variable in settings.
+- [X] Change everywhere that it's not hardcoded to filename "darkesthour" or "darkesthour.c",
+  but instead it's changeable variable in settings. => Done: Source/settings.sh
 
 # TODO
 
@@ -24,6 +24,9 @@ From @xet7
   - https://news.ycombinator.com/item?id=36167820
   - https://inria.hal.science/hal-02383654v1/preview/ModernC.pdf
   - Code: https://inria.hal.science/hal-03345464v1/document
+- C not low level
+  - https://queue.acm.org/detail.cfm?id=3212479
+  - https://news.ycombinator.com/item?id=37897946
 
 ## Reading and writing files
 
