@@ -27,6 +27,8 @@ From @xet7
 - C not low level
   - https://queue.acm.org/detail.cfm?id=3212479
   - https://news.ycombinator.com/item?id=37897946
+- Ask HN: Good practices for my first C project?
+  - https://news.ycombinator.com/item?id=37927792
 
 ## Reading and writing files
 
