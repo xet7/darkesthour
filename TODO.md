@@ -14,6 +14,10 @@ From @xet7
 - https://github.com/microsoft/checkedc
 - https://news.ycombinator.com/item?id=34084455
 
+## Book
+
+- https://www.amazon.com/Secure-Coding-2nd-Software-Engineering/dp/0321822137
+
 ## Learn C
 
 - https://news.ycombinator.com/item?id=34105770
