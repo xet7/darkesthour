@@ -58,8 +58,8 @@ do
       mkdir -p build/Cosmopolitan
       echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
-      echo m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
-      m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
+      echo qemu-i386 /opt/m68k-amigaos/bin/m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
+      qemu-i386 /opt/m68k-amigaos/bin/m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       mkdir -p build/AppleII
       echo ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
       ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
@@ -151,8 +151,8 @@ do
       ;;
    "Build AmigaOS3")
       mkdir -p build/AmigaOS3
-      echo m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
-      m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
+      echo qemu-i386 /opt/m68k-amigaos/bin/m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
+      qemu-i386 /opt/m68k-amigaos/bin/m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       break
       ;;
    "Build AppleII")

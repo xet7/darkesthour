@@ -2,8 +2,12 @@
 
 #### If crosscompilers and emulators do not exist, add them
 #if [ ! -f /usr/bin/ia16-elf-gcc ] ; then
+
+# If apt-get exists
+if command -v apt-get &> /dev/null
+then
 	sudo apt-get update
-        sudo apt-get -y install software-properties-common python3-launchpadlib 
+        sudo apt-get -y install software-properties-common python3-launchpadlib
 #gcc-multilib
 	sudo add-apt-repository -y ppa:tkchia/build-ia16
 	sudo sed -i 's|bookworm|lunar|g' /etc/apt/sources.list.d/tkchia-ubuntu-build-ia16-bookworm.list
@@ -26,13 +30,18 @@
 		gcc-mipsisa32r6el-linux-gnu binutils-mipsisa32r6el-linux-gnu \
 		gcc-mipsisa64r6-linux-gnuabi64 binutils-mipsisa64r6-linux-gnuabi64 \
 		gcc-mipsisa64r6el-linux-gnuabi64 binutils-mipsisa64r6el-linux-gnuabi64
-# \
-#		tree 2>&1 | tee ../../darkest-hour-install-deps-log.txt
+fi
 
+#		tree 2>&1 | tee ../../darkest-hour-install-deps-log.txt
 #		gcc-sparc64-linux-gnu binutils-sparc64-linux-gnu \   ## Running causes core dump
 
 
-#fi
+# If command dnf exists at Fedora
+if command -v dnf &> /dev/null
+then
+  sudo dnf -y install gcc* glibc-devel glibc-headers 
+  sudo dnf -y groupinstall "Development Tools" "Development Libraries"
+fi
 
 #### Build newest cc65 compiler for C64 etc from source
 if [ ! -d archive/cc65 ] ; then
@@ -45,7 +54,7 @@ fi
 #fi
 
 #### Install Linux i386 to AmigaOS3 crosscompiler
-if [ -L /usr/local/bin/68k-amigaos-gcc ] ; then
+if [ ! -L /usr/local/bin/68k-amigaos-gcc ] ; then
 	#(sudo apt-get -y install gcc-multilib)
 	(sudo cp archive/m68k-amigaos_linux_i386.tar.gz /tmp/)
 	(cd /opt && sudo tar zxf /tmp/m68k-amigaos_linux_i386.tar.gz)
@@ -67,6 +76,8 @@ if [ ! -d /opt/cosmo ] ; then
 	mkdir -p /opt/cosmos/bin && \
 	export PATH="/opt/cosmos/bin:$PATH" && \
 	echo 'PATH="/opt/cosmos/bin:$PATH"' >>~/.profile && \
+	sudo ln -sf /opt/cosmo/tool/scripts/cosmocc /usr/bin/cosmocc && \
+	sudo ln -sf /opt/cosmo/tool/scripts/cosmoc++ /usr/bin/cosmoc++ && \
 	sudo ln -sf /opt/cosmo/tool/scripts/cosmocc /opt/cosmos/bin/cosmocc && \
 	sudo ln -sf /opt/cosmo/tool/scripts/cosmoc++ /opt/cosmos/bin/cosmoc++)
 fi
