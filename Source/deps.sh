@@ -39,7 +39,7 @@ fi
 # If command dnf exists at Fedora
 if command -v dnf &> /dev/null
 then
-  sudo dnf -y install gcc* glibc-devel glibc-headers 
+  sudo dnf -y install gcc* glibc-devel glibc-headers
   sudo dnf -y groupinstall "Development Tools" "Development Libraries"
 fi
 
