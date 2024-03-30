@@ -26,3 +26,29 @@ A few last things I'd like to say on the tech side:
 * Unfortunately I didn't have time to cut the byte-count down to what I'd need for a VIC-20 build, but that is a thing you can do if you want.
 * Regarding the Apple 2 bug: One thing I didn't have time to try was the getstr and getch functions in conio.h; I mainly tried to focus on standard C for maximum portability, but it wasn't until the last minute that I thought of this.  So if you're a serious Apple 2 fan, that bug drives you crazy, and you feel like playing with cc65, feel free to have at it.
 * And thank you for checking out my game! :)
+
+## Amiga C  compiler workaroud
+
+At Asahi Fedora arm64 at M1 Air happens this error, when running
+Amiga C compiler with qemu-user for i386,
+when using https://github.com/xet7/darkesthour
+
+```
+$ qemu-i386 /opt/m68k-amigaos/bin/m68k-amigaos-gcc
+qemu-i386: /opt/m68k-amigaos/bin/m68k-amigaos-gcc: Unable to find a guest_base
+  to satisfy all guest address mapping requirements
+  00000000-ffffffff
+```
+This is bug that happens at Fedora: https://gitlab.com/qemu-project/qemu/-/issues/2082
+
+There is workaroud at `.spec` file:
+```
+--enable-pie
+```
+It works around the issue by making the qemu binary load address random,
+o the issue now happens sometimes, while it looks like it is solved.
+
+Info about compiling Qemu is at:
+
+https://github.com/howinfo/howinfo/wiki/Qemu
+
