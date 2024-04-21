@@ -52,12 +52,13 @@ do
       break
       ;;
    "Build All")
-      #mkdir -p build/Cosmopolitan build/NetBSD build/OpenBSD build/Haiku build/AmigaOS3
+      #mkdir -p build/Cosmopolitan build/NetBSD build/OpenBSD build/Haiku
       # $NAMEMINUS-cosmo.c had one line difference: below of #include <stdio.h> is
       # added new line: #include <cosmo.h>
       mkdir -p build/Cosmopolitan
       echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
+      mkdir -p build/AmigaOS3
       echo qemu-i386 /opt/m68k-amigaos/bin/m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       qemu-i386 /opt/m68k-amigaos/bin/m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       mkdir -p build/AppleII
