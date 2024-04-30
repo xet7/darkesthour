@@ -65,17 +65,17 @@ do
       echo ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
       ./archive/cc65/bin/cl65 -t apple2 ./$NAMEMINUS.c -o build/AppleII/$NAMECAMELCASE
       mkdir -p build/C64
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t c64 ./$NAMEMINUS.c -o build/C64/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -t c64 ./$NAMEMINUS.c -o build/C64/$NAMECAMELCASE.prg
       mkdir -p build/CBM-II
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t cbm610 ./$NAMEMINUS.c -o build/CBM-II/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -t cbm610 ./$NAMEMINUS.c -o build/CBM-II/$NAMECAMELCASE.prg
       mkdir -p build/CommodorePET40columns
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t pet ./$NAMEMINUS.c -o build/CommodorePET40columns/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -t pet ./$NAMEMINUS.c -o build/CommodorePET40columns/$NAMECAMELCASE.prg
       mkdir -p build/CommodorePET80columns
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t pet ./$NAMEMINUS.c -o build/CommodorePET80columns/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -t pet ./$NAMEMINUS.c -o build/CommodorePET80columns/$NAMECAMELCASE.prg
       mkdir -p build/DOS
       echo ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
       ia16-elf-gcc ./$NAMEMINUS.c -o build/DOS/$NAMEDOS.EXE -Wall
@@ -86,8 +86,8 @@ do
       echo x86_64-w64-mingw32-gcc -o ./build/Win64/$NAMEMINUS-win64.exe ./$NAMEMINUS.c
       x86_64-w64-mingw32-gcc -o ./build/Win64/$NAMEMINUS-win64.exe ./$NAMEMINUS.c
       mkdir -p build/Plus4
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t plus4 ./$NAMEMINUS.c -o build/Plus4/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -t plus4 ./$NAMEMINUS.c -o build/Plus4/$NAMECAMELCASE.prg
       mkdir -p build/Linux-x32
       echo gcc -m32 $NAMEMINUS.c -o build/Linux-x32/$NAMEMINUS -Wall -static
       gcc -m32 $NAMEMINUS.c -o build/Linux-x32/$NAMEMINUS -Wall -static
@@ -164,26 +164,26 @@ do
       ;;
    "Build C64")
       mkdir -p build/C64
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t c64 -o build/C64/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t c64 ./$NAMEMINUS.c -o build/C64/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -t c64 ./$NAMEMINUS.c -o build/C64/$NAMECAMELCASE.prg
       break
       ;;
     "Build CBM-II")
       mkdir -p build/CBM-II
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t cbm610 -o build/CBM-II/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t cbm610 ./$NAMEMINUS.c -o build/CBM-II/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -t cbm610 ./$NAMEMINUS.c -o build/CBM-II/$NAMECAMELCASE.prg
       break
       ;;
     "Build CommodorePET40columns")
       mkdir -p build/CommodorePET40columns
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET40columns/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t pet ./$NAMEMINUS.c -o build/CommodorePET40columns/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -t pet ./$NAMEMINUS.c -o build/CommodorePET40columns/$NAMECAMELCASE.prg
       break
       ;;
     "Build CommodorePET80columns")
       mkdir -p build/CommodorePET80columns
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t pet -o build/CommodorePET80columns/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t pet ./$NAMEMINUS.c -o build/CommodorePET80columns/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -r pet ./$NAMEMINUS.c -o build/CommodorePET80columns/$NAMECAMELCASE.prg
       break
       ;;
     "Build DOS")
@@ -206,8 +206,8 @@ do
       ;;
     "Build Plus4")
       mkdir -p build/Plus4
-      echo ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
-      ./archive/cc65/bin/cl65 ./$NAMEMINUS.c -t plus4 -o build/Plus4/$NAMECAMELCASE.prg
+      echo ./archive/cc65/bin/cl65 -t plus4 ./$NAMEMINUS.c -o build/Plus4/$NAMECAMELCASE.prg
+      ./archive/cc65/bin/cl65 -t plus4 ./$NAMEMINUS.c -o build/Plus4/$NAMECAMELCASE.prg
       break
       ;;
     "Build NetBSD-amd64")
