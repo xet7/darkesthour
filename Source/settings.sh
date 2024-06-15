@@ -1,4 +1,4 @@
-printf "Build/CrossCompile/Run with DosBox/Wine/Qemu\n\n"
+printf "Build/CrossCompile/Run with DosBox/Wine/Qemu:\n\n"
 
 echo "1) Build Darkest Hour"
 echo "2) Build WeKan"

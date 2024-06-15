@@ -22,6 +22,7 @@ function pause(){
 
 PS3='Please enter your choice: '
 options=("Build All" \
+"Convert to Zig" \
 "List built executeables" \
 "List filetypes of built executeables" \
 "List original executeables" \
@@ -142,6 +143,14 @@ do
       mkdir -p build/Linux-sparc64
       echo sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
       sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
+      break
+      ;;
+    "Convert to Zig")
+      sudo apt -y install snapd
+      sudo snap install zig --edge --classic
+      echo "Converting $NAMEMINUS.c to $NAMEMINUS.zig ..."
+      zig translate-c -lc $NAMEMINUS.c > $NAMEMINUS.zig
+      echo "Done."
       break
       ;;
     "List filetypes of built executeables")
