@@ -2,3 +2,4 @@ build
 Source/archive/cc65
 Source/archive/cc65/*
 *.o
+*.zig
