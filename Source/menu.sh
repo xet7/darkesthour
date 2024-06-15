@@ -15,13 +15,15 @@ function pause(){
 
 #No qemu-user:  "Run Linux-mipsisa32r6" "Run Linux-mipsisa32r6el" \
 
-echo "Edit settings.sh to change filenames."
-echo "$NAMESPACE: Build/Crosscompile/Run with DosBox/Wine/Qemu."
-echo "Cosmopolitan Build at Linux, Run at amd64 Windows/Linux/Mac/NetBSD/OpenBSD."
-echo "at: Only Build/Run at those OS, no crosscompiling those yet."
+#echo "Edit settings.sh to change filenames."
+#echo "$NAMESPACE: Build/Crosscompile/Run with DosBox/Wine/Qemu."
+#echo "Cosmopolitan Build at Linux, Run at amd64 Windows/Linux/Mac/NetBSD/OpenBSD."
+#echo "at: Only Build/Run at those OS, no crosscompiling those yet."
 #echo
 PS3='Please enter your choice: '
-options=("List filetypes of built executeables" "Build All" \
+options=("Build" "List built executeables" \
+"List filetypes of built executeables" \
+"List original executeables" "Build All" \
 "Build Cosmopolitan" "Build AmigaOS3" \
 "Build AppleII" "Build CBM-II" "Build C64" \
 "Build DOS" "Build Win32" "Build Win64" "Build Plus4" \
@@ -51,13 +53,28 @@ do
       file build/*/*
       break
       ;;
+    "List built executeables")
+      echo "tree build"
+      tree build
+      break
+      ;;
+    "List original executeables")
+      echo "tree ../Original"
+      tree build
+      break
+      ;;
    "Build All")
       #mkdir -p build/Cosmopolitan build/NetBSD build/OpenBSD build/Haiku
+      mkdir -p build/Cosmopolitan
       # $NAMEMINUS-cosmo.c had one line difference: below of #include <stdio.h> is
       # added new line: #include <cosmo.h>
-      mkdir -p build/Cosmopolitan
+      # Add cosmo header for temporary Cosmopolitan C version:
+      cp $NAMEMINUS.c $NAMEMINUS-cosmo.c
+      sed -i 's|#include <stdio.h>|#include <stdio.h>\n#include <cosmo.h>|g' $NAMEMINUS-cosmo.c
       echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
+      # Delete temporary Cosmopolitan C version:
+      rm $NAMEMINUS-cosmo.c
       mkdir -p build/AmigaOS3
       echo qemu-i386 /opt/m68k-amigaos/bin/m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
       qemu-i386 /opt/m68k-amigaos/bin/m68k-amigaos-gcc $NAMEMINUS.c -noixemul -o build/AmigaOS3/$NAMEMINUS
@@ -145,9 +162,13 @@ do
       mkdir -p build/Cosmopolitan
       # $NAMEMINUS-cosmo.c had one line difference: below of #include <stdio.h> is
       # added new line: #include <cosmo.h>
-      mkdir -p build/Cosmopolitan
+      # Add cosmo header for temporary Cosmopolitan C version:
+      cp $NAMEMINUS.c $NAMEMINUS-cosmo.c
+      sed -i 's|#include <stdio.h>|#include <stdio.h>\n#include <cosmo.h>|g' $NAMEMINUS-cosmo.c
       echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
+      # Delete temporary Cosmopolitan C version:
+      rm $NAMEMINUS-cosmo.c
       break
       ;;
    "Build AmigaOS3")
