@@ -19,11 +19,12 @@ function pause(){
 #echo "$NAMESPACE: Build/Crosscompile/Run with DosBox/Wine/Qemu."
 #echo "Cosmopolitan Build at Linux, Run at amd64 Windows/Linux/Mac/NetBSD/OpenBSD."
 #echo "at: Only Build/Run at those OS, no crosscompiling those yet."
-#echo
+
 PS3='Please enter your choice: '
-options=("Build" "List built executeables" \
+options=("Build All" \
+"List built executeables" \
 "List filetypes of built executeables" \
-"List original executeables" "Build All" \
+"List original executeables" \
 "Build Cosmopolitan" "Build AmigaOS3" \
 "Build AppleII" "Build CBM-II" "Build C64" \
 "Build DOS" "Build Win32" "Build Win64" "Build Plus4" \
@@ -48,21 +49,6 @@ options=("Build" "List built executeables" \
 select opt in "${options[@]}"
 do
   case $opt in
-    "List filetypes of built executeables")
-      echo "file build/*/*"
-      file build/*/*
-      break
-      ;;
-    "List built executeables")
-      echo "tree build"
-      tree build
-      break
-      ;;
-    "List original executeables")
-      echo "tree ../Original"
-      tree build
-      break
-      ;;
    "Build All")
       #mkdir -p build/Cosmopolitan build/NetBSD build/OpenBSD build/Haiku
       mkdir -p build/Cosmopolitan
@@ -156,6 +142,21 @@ do
       mkdir -p build/Linux-sparc64
       echo sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
       sparc64-linux-gnu-gcc $NAMEMINUS.c -o build/Linux-sparc64/$NAMEMINUS -Wall -static
+      break
+      ;;
+    "List filetypes of built executeables")
+      echo "file build/*/*"
+      file build/*/*
+      break
+      ;;
+    "List built executeables")
+      echo "tree build"
+      tree build
+      break
+      ;;
+    "List original executeables")
+      echo "tree ../Original"
+      tree build
       break
       ;;
    "Build Cosmopolitan")

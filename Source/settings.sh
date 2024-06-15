@@ -11,7 +11,7 @@ read SELECTED
 case $SELECTED in
 
   1)
-    echo -n "Darkest Hour"
+    printf "Darkest Hour:\n\n"
     NAMEMINUS=darkest-hour
     NAMEDOS=DARKHOUR
     NAMECAMELCASE=DarkestHour
@@ -19,7 +19,7 @@ case $SELECTED in
     ;;
 
   2)
-    echo -n "WeKan"
+    printf "WeKan:\n\n"
     NAMEMINUS=wekan
     NAMEDOS=WEKAN
     NAMECAMELCASE=WeKan
@@ -27,7 +27,7 @@ case $SELECTED in
     ;;
 
   3)
-    echo -n "Write"
+    printf "Write:\n\n"
     NAMEMINUS=write
     NAMEDOS=WRITE
     NAMECAMELCASE=Write
@@ -35,7 +35,7 @@ case $SELECTED in
     ;;
 
   4)
-    echo -n "Custom"
+    printf "Custom:\n\n"
     ls *.c
     printf "\n"
     echo -n "Enter filename from above, without .c suffix: "
@@ -55,4 +55,3 @@ case $SELECTED in
     echo -n "Unknown"
     ;;
 esac
-
