@@ -16,6 +16,12 @@ From @xet7
 - https://frama-c.com
 - https://clang.llvm.org/docs/ShadowCallStack.html
 
+## C programming course 2024
+
+- https://www.cc4e.com
+- https://github.com/csev/cc4e
+- https://www.youtube.com/watch?v=PaPN51Mm5qQ
+
 ## Book
 
 - https://www.amazon.com/Secure-Coding-2nd-Software-Engineering/dp/0321822137
