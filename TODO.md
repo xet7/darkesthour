@@ -9,6 +9,12 @@ From @xet7
 
 # TODO
 
+## C memory safety
+
+- https://lunduke.locals.com/post/6226090/the-biggest-lie-of-rust-is-that-you-cannot-program-safe-c-because-it-is-too-difficult-but-this-igno
+- "The biggest lie of Rust is that you cannot program safe C because it is too difficult, but this ignores that you in fact can program safe C, as easy as Rust, with the help of a Theorem Prover like Lean. Is the way the seL4 kernel, a kernel written in C, was written with a memory safety guarantee.
+This also has the bonus that for external contributors is not necessary to learn the Theorem Prover, unless the project request the proof to be in companion of the contribution."
+
 ## Check C code for type safety?
 
 - https://github.com/microsoft/checkedc
