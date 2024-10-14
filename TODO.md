@@ -17,6 +17,7 @@ This also has the bonus that for external contributors is not necessary to learn
   - Michael Norrish. C formalised in HOL. PhD thesis, University of Cambridge Computer Laboratory, 1998.
   - http://web1.cs.columbia.edu/~junfeng/09fa-e6998/papers/sel4.pdf
   - https://trustworthy.systems/publications/nictaabstracts/Klein_AEMSKH_14.abstract
+- "After the xz backdoor incident, there was made a study of Rust's supply-chain security. And what he found was disconcerting: https://lunduke.locals.com/post/5454672/the-incredible-terrible-insecurity-of-rust-so-by-now-im-sure-youve-heard-the-news-about-a-backd In addition, there's that whole business of trademarks. https://lunduke.locals.com/post/3837410/this-one-is-borderline-if-this-is-on-the-wrong-side-lunduke-tell-me-so-and-ill-move-it-the In summary: if there was more than one compiler for Rust, created by somebody who isn't associated with The Rust Team, then it might be a decent idea. In addition, I seem to remember some dude somewhere figured out how to subvert the entire memory safety system of Rust, but I can't remember where exactly I read that."
 
 ## Check C code for type safety?
 
