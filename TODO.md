@@ -19,6 +19,20 @@ This also has the bonus that for external contributors is not necessary to learn
   - https://trustworthy.systems/publications/nictaabstracts/Klein_AEMSKH_14.abstract
 - "After the xz backdoor incident, there was made a study of Rust's supply-chain security. And what he found was disconcerting: https://lunduke.locals.com/post/5454672/the-incredible-terrible-insecurity-of-rust-so-by-now-im-sure-youve-heard-the-news-about-a-backd In addition, there's that whole business of trademarks. https://lunduke.locals.com/post/3837410/this-one-is-borderline-if-this-is-on-the-wrong-side-lunduke-tell-me-so-and-ill-move-it-the In summary: if there was more than one compiler for Rust, created by somebody who isn't associated with The Rust Team, then it might be a decent idea. In addition, I seem to remember some dude somewhere figured out how to subvert the entire memory safety system of Rust, but I can't remember where exactly I read that."
 
+The incredible, terrible insecurity of Rust
+
+So, by now I'm sure you've heard the news about a backdoor making it into xz builds on unstable versions of Debian and Fedora. I made a joke in one of the threads here about Rust surely being able to prevent this kind of vulnerability.
+
+Then, I decided to look into the state of supply-chain security in Rust. And... wow.
+
+For the last seventy-seven releases of the Rust compiler -- the last nine years of development -- the Rust team has worked meticulously to ensure that each new version of the compiler can only be built using the exact previous version. Want to compile rustc 1.77? You'll need to compile rustc 1.76 first; rustc 1.75 won't cut it. So compiling the most recent version of Rust from scratch is really difficult and expensive. (Even if you start from the third-party "mrustc" implementation, you'll still need to build more than 20 intermediate versions. "gccrs" won't save you either because they're planning to take hard dependencies on Rust libraries that will need to be compiled with rustc.)
+
+This would not be a huge problem except that Rust developers demand that the latest version of Rust be available in distributions immediately. There's no official specification for the Rust language, and the year-based "editions" mechanism is almost worthless; correct Rust is whatever the compiler happens to accept at the moment, and that changes every six weeks. If you're a distro, good luck reviewing all those changes. If you're not, good luck participating in the community without bypassing your distro's security process to download rustc directly from the Rust team.
+
+And that community is important! Rust is intentionally designed to (force) heavily encourage you to download packages from Crates.io, their community package manager. (Important features like proc macros and async are almost completely unusable without third-party packages.) Crates.io is heavily inspired by NPM, the JavaScript package manager you might have heard about from the constant stream of news articles about malicious packages and left-pad controversies.
+
+Combine that with the "welcoming" behavior required by the Rust Code of Conduct and, well... if I was a nation-state actor trying to scheme a way to sneak backdoors onto people's computers, I don't think I could come up with much better than this.
+
 ## Check C code for type safety?
 
 - https://github.com/microsoft/checkedc
