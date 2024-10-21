@@ -9,6 +9,11 @@ From @xet7
 
 # TODO
 
+## reftrack-plugin – plugin for GCC that tracks references to allocated objects
+
+- https://github.com/acbits/reftrack-plugin
+- https://news.ycombinator.com/item?id=41884662
+
 ## Memory safety without lifetime parameters
 
 - https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3444r0.html
