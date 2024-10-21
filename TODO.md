@@ -9,6 +9,11 @@ From @xet7
 
 # TODO
 
+## Memory safety without lifetime parameters
+
+- https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2024/p3444r0.html
+- https://news.ycombinator.com/item?id=41899828
+
 ## C memory safety
 
 - https://lunduke.locals.com/post/6226090/the-biggest-lie-of-rust-is-that-you-cannot-program-safe-c-because-it-is-too-difficult-but-this-igno
