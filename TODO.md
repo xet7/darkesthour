@@ -9,6 +9,11 @@ From @xet7
 
 # TODO
 
+## The C23 edition of Modern C
+
+- https://gustedt.wordpress.com/2024/10/15/the-c23-edition-of-modern-c/
+- https://news.ycombinator.com/item?id=41850017
+
 ## reftrack-plugin – plugin for GCC that tracks references to allocated objects
 
 - https://github.com/acbits/reftrack-plugin
