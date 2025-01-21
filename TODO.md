@@ -9,6 +9,12 @@ From @xet7
 
 # TODO
 
+## Newest: Fil-C for C/C++ Memory Safety
+
+- https://www.youtube.com/live/_VF3pISRYRc?t=5510s
+- https://github.com/pizlonator/llvm-project-deluge/blob/deluge/Manifesto.md
+- https://lunduke.locals.com/post/6578635/fil-c-memorysafety-fil-c-for-c-c-memory-safety-etc-https-www-youtube-com-watch-v-vf3p
+
 ## The C23 edition of Modern C
 
 - https://gustedt.wordpress.com/2024/10/15/the-c23-edition-of-modern-c/
