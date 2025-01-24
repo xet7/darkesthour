@@ -15,6 +15,11 @@ From @xet7
 - https://github.com/pizlonator/llvm-project-deluge/blob/deluge/Manifesto.md
 - https://lunduke.locals.com/post/6578635/fil-c-memorysafety-fil-c-for-c-c-memory-safety-etc-https-www-youtube-com-watch-v-vf3p
 
+## stdlib not threadsafe
+
+- https://www.edgedb.com/blog/c-stdlib-isn-t-threadsafe-and-even-safe-rust-didn-t-save-us
+- https://news.ycombinator.com/item?id=42796058
+
 ## The C23 edition of Modern C
 
 - https://gustedt.wordpress.com/2024/10/15/the-c23-edition-of-modern-c/
