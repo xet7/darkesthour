@@ -9,7 +9,12 @@ From @xet7
 
 # TODO
 
-## Newest: Fil-C for C/C++ Memory Safety
+## C++ creator calls for help to defend programming language from 'serious attacks'
+
+- https://www.theregister.com/2025/03/02/c_creator_calls_for_action/
+- https://www.youtube.com/watch?v=nfx9iV7GuNk
+
+## Fil-C for C/C++ Memory Safety
 
 - https://www.youtube.com/live/_VF3pISRYRc?t=5510s
 - https://github.com/pizlonator/llvm-project-deluge/blob/deluge/Manifesto.md
