@@ -2,17 +2,22 @@ From @xet7
 
 # DONE
 
-## JSON
-
-- Ultralightweight JSON parser in ANSI C
-  - https://github.com/DaveGamble/cJSON 
-
 ## Changeable filename
 
 - [X] Change everywhere that it's not hardcoded to filename "darkesthour" or "darkesthour.c",
   but instead it's changeable variable in settings. => Done: Source/settings.sh
 
 # TODO
+
+## JSON
+
+- Ultralightweight JSON parser in ANSI C
+  - https://github.com/DaveGamble/cJSON 
+
+## Beej's Guide to C Programming
+
+- https://beej.us/guide/bgc/pdf/bgc_a4_c_1.pdf
+- https://news.ycombinator.com/item?id=43471393
 
 ## C++ creator calls for help to defend programming language from 'serious attacks'
 
