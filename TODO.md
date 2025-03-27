@@ -2,6 +2,11 @@ From @xet7
 
 # DONE
 
+## JSON
+
+- Ultralightweight JSON parser in ANSI C
+  - https://github.com/DaveGamble/cJSON 
+
 ## Changeable filename
 
 - [X] Change everywhere that it's not hardcoded to filename "darkesthour" or "darkesthour.c",
