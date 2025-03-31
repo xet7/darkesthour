@@ -14,6 +14,11 @@ From @xet7
 - Ultralightweight JSON parser in ANSI C
   - https://github.com/DaveGamble/cJSON 
 
+## How to Secure Existing C and C++ Software Without Memory Safety
+
+- https://arxiv.org/abs/2503.21145
+- https://news.ycombinator.com/item?id=43532220
+
 ## C and C++ Prioritize Performance over Correctness (2023)
 
 - https://research.swtch.com/ub
