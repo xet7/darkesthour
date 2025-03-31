@@ -14,6 +14,11 @@ From @xet7
 - Ultralightweight JSON parser in ANSI C
   - https://github.com/DaveGamble/cJSON 
 
+## C and C++ Prioritize Performance over Correctness (2023)
+
+- https://research.swtch.com/ub
+- https://news.ycombinator.com/item?id=43509524
+
 ## C Programming and Memory Management - Full Course
 
 - https://www.youtube.com/watch?v=rJrd2QMVbGM
