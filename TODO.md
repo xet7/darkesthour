@@ -14,6 +14,15 @@ From @xet7
 - Ultralightweight JSON parser in ANSI C
   - https://github.com/DaveGamble/cJSON 
 
+## C Programming and Memory Management - Full Course
+
+- https://www.youtube.com/watch?v=rJrd2QMVbGM
+
+## Compiler Options Hardening Guide for C and C++
+
+- https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
+- https://news.ycombinator.com/item?id=43533516
+
 ## Beej's Guide to C Programming
 
 - https://beej.us/guide/bgc/pdf/bgc_a4_c_1.pdf
