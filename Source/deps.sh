@@ -7,7 +7,7 @@
 if command -v apt-get &> /dev/null
 then
 	sudo apt-get update
-        sudo apt-get -y install software-properties-common python3-launchpadlib
+        sudo apt-get -y install software-properties-common python3-launchpadlib git gitk zip unzip p7zip-full unp wget curl
 #gcc-multilib
 	sudo add-apt-repository -y ppa:tkchia/build-ia16
 	sudo sed -i 's|bookworm|lunar|g' /etc/apt/sources.list.d/tkchia-ubuntu-build-ia16-bookworm.list
@@ -63,21 +63,30 @@ if [ ! -L /usr/local/bin/68k-amigaos-gcc ] ; then
 	(sudo rm /tmp/m68k-amigaos_linux_i386.tar.gz)
 fi
 
-# Cosmopolitan
+# Not needed, because downloading binaries below.
+# Clone Cosmopolitan repo
+#if [ ! -d ~/repos/cosmopolitan ] ; then
+#	(mkdir -p ~/repos && \
+#	cd ~/repos && \
+#	git clone https://github.com/jart/cosmopolitan)
+#fi
 
-if [ ! -d /opt/cosmo ] ; then
-	(sudo sh -c "echo ':APE:M::MZqFpD::/bin/sh:' >/proc/sys/fs/binfmt_misc/register" && \
-	sudo mkdir -p /opt && \
-	sudo chmod 1777 /opt && \
-	git clone https://github.com/jart/cosmopolitan /opt/cosmo && \
-	cd /opt/cosmo && \
-	make -j8 toolchain && \
-	ape/apeinstall.sh && \
-	mkdir -p /opt/cosmos/bin && \
-	export PATH="/opt/cosmos/bin:$PATH" && \
-	echo 'PATH="/opt/cosmos/bin:$PATH"' >>~/.profile && \
-	sudo ln -sf /opt/cosmo/tool/scripts/cosmocc /usr/bin/cosmocc && \
-	sudo ln -sf /opt/cosmo/tool/scripts/cosmoc++ /usr/bin/cosmoc++ && \
-	sudo ln -sf /opt/cosmo/tool/scripts/cosmocc /opt/cosmos/bin/cosmocc && \
-	sudo ln -sf /opt/cosmo/tool/scripts/cosmoc++ /opt/cosmos/bin/cosmoc++)
+# Install Ape
+sudo wget -O /usr/bin/ape https://cosmo.zip/pub/cosmos/bin/ape-$(uname -m).elf
+sudo chmod +x /usr/bin/ape
+sudo sh -c "echo ':APE:M::MZqFpD::/usr/bin/ape:' >/proc/sys/fs/binfmt_misc/register"
+sudo sh -c "echo ':APE-jart:M::jartsr::/usr/bin/ape:' >/proc/sys/fs/binfmt_misc/register"
+sudo sh -c 'echo -1 > /proc/sys/fs/binfmt_misc/cli'     # remove Ubuntu's MZ interpreter
+sudo sh -c 'echo -1 > /proc/sys/fs/binfmt_misc/status'  # remove ALL binfmt_misc entries
+
+# Install CosmoCC
+if [ ! -d ~/cosmo ] ; then
+	(mkdir -p ~/cosmo && \
+	cd ~/cosmo && \
+	wget https://cosmo.zip/pub/cosmocc/cosmocc.zip && \
+	wget https://cosmo.zip/pub/cosmos/zip/cosmos.zip && \
+	wget https://cosmo.zip/pub/cosmos/zip/web.zip && \
+	unzip -o -f -u cosmocc.zip && \
+	unzip -o -f -u cosmos.zip && \
+	unzip -o -f -u web.zip)
 fi

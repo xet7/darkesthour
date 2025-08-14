@@ -4,7 +4,6 @@
 
 # Read settings for filenames from settings.sh
 source settings.sh
-
 #====== SETTINGS END =======
 
 function pause(){
@@ -59,7 +58,7 @@ do
       cp $NAMEMINUS.c $NAMEMINUS-cosmo.c
       sed -i 's|#include <stdio.h>|#include <stdio.h>\n#include <cosmo.h>|g' $NAMEMINUS-cosmo.c
       echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
-      cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
+      ~/cosmo/bin/$(uname -m)-linux-cosmo-gcc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       # Delete temporary Cosmopolitan C version:
       rm $NAMEMINUS-cosmo.c
       mkdir -p build/AmigaOS3
@@ -176,7 +175,7 @@ do
       cp $NAMEMINUS.c $NAMEMINUS-cosmo.c
       sed -i 's|#include <stdio.h>|#include <stdio.h>\n#include <cosmo.h>|g' $NAMEMINUS-cosmo.c
       echo cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
-      cosmocc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
+      ~/cosmo/bin/$(uname -m)-linux-cosmocc-gcc -o build/Cosmopolitan/$NAMEMINUS-cosmo.com $NAMEMINUS-cosmo.c
       # Delete temporary Cosmopolitan C version:
       rm $NAMEMINUS-cosmo.c
       break
