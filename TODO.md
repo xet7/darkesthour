@@ -9,6 +9,11 @@ From @xet7
 
 # TODO
 
+## C64 version of kanban related, colors and rounded corners possible
+
+- https://github.com/EgonOlsen71/moscription
+- https://www.youtube.com/watch?v=vj07cuVY1XA
+
 ## JSON
 
 - Ultralightweight JSON parser in ANSI C

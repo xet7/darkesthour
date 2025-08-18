@@ -9,7 +9,7 @@ then
 	sudo apt-get update
         sudo apt-get -y install software-properties-common python3-launchpadlib git gitk zip unzip p7zip-full unp wget curl
 #gcc-multilib
-	sudo add-apt-repository -y ppa:tkchia/build-ia16
+#	sudo add-apt-repository -y ppa:tkchia/build-ia16
 	sudo sed -i 's|bookworm|lunar|g' /etc/apt/sources.list.d/tkchia-ubuntu-build-ia16-bookworm.list
 	sudo apt-get -y install gcc-ia16-elf build-essential mingw-w64 p7zip-full \
 		gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi \
