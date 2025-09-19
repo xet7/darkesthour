@@ -48,11 +48,18 @@ From @xet7
 - https://www.theregister.com/2025/03/02/c_creator_calls_for_action/
 - https://www.youtube.com/watch?v=nfx9iV7GuNk
 
-## Fil-C for C/C++ Memory Safety
+## Fil-C
 
-- https://www.youtube.com/live/_VF3pISRYRc?t=5510s
-- https://github.com/pizlonator/llvm-project-deluge/blob/deluge/Manifesto.md
-- https://lunduke.locals.com/post/6578635/fil-c-memorysafety-fil-c-for-c-c-memory-safety-etc-https-www-youtube-com-watch-v-vf3p
+- Safepoints and Fil-C
+  - https://fil-c.org/safepoints
+  - https://archive.is/IW4B1
+  - https://news.ycombinator.com/item?id=45258029
+  - https://archive.is/HBGwY
+- Fil-C for C/C++ Memory Safety
+  - https://www.youtube.com/live/_VF3pISRYRc?t=5510s
+  - https://github.com/pizlonator/llvm-project-deluge/blob/deluge/Manifesto.md
+  - https://archive.is/L6hPe
+  - https://lunduke.locals.com/post/6578635/fil-c-memorysafety-fil-c-for-c-c-memory-safety-etc-https-www-youtube-com-watch-v-vf3p
 
 ## stdlib not threadsafe
 
