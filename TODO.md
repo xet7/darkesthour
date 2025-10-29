@@ -50,6 +50,11 @@ From @xet7
 
 ## Fil-C
 
+- Fil-C: A memory-safe C implementation
+  - https://lwn.net/SubscriberLink/1042938/658ade3768dd4758/
+  - https://archive.is/HLStB
+  - https://news.ycombinator.com/item?id=45735877
+  - https://archive.is/zRDSW
 - Safepoints and Fil-C
   - https://fil-c.org/safepoints
   - https://archive.is/IW4B1
