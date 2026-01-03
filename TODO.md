@@ -19,6 +19,13 @@ From @xet7
 - Ultralightweight JSON parser in ANSI C
   - https://github.com/DaveGamble/cJSON 
 
+## Xr0 verifier, guarantee the safety of C programs at compile time
+
+- https://xr0.dev
+- https://archive.is/svOpE
+- https://news.ycombinator.com/item?id=46479673
+- https://archive.is/TLRhA
+
 ## How to Secure Existing C and C++ Software Without Memory Safety
 
 - https://arxiv.org/abs/2503.21145
